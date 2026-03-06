@@ -408,7 +408,7 @@ export const TerminalPanel: FC<TerminalPanelProps> = ({ style }) => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="flex-1 font-mono text-sm placeholder-gray-400 bg-transparent border-none outline-none min-w-0 min-h-[44px] py-2 dark:placeholder-white-500"
+                className="flex-1 min-w-0 py-2 font-mono text-sm placeholder-gray-400 bg-transparent border-none outline-none min-h-[44px] dark:placeholder-white-500"
                 placeholder="Type a command..."
                 spellCheck={false}
                 autoComplete="off"

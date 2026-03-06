@@ -157,14 +157,12 @@ const CursorLayoutInner: FC<{ children?: React.ReactNode }> = () => {
             )}
           </AnimatePresence>
         </div>
-        {showTerminal && (
-          <ResizeHandle direction="horizontal" onDrag={addTerminalDelta} className="hidden lg:flex" />
-        )}
+        {showTerminal && <ResizeHandle direction="horizontal" onDrag={addTerminalDelta} className="hidden lg:flex" />}
         <AnimatePresence>
           {showTerminal && (
             <motion.div
               key="terminal"
-              className="flex shrink-0 w-full"
+              className="flex w-full shrink-0"
               style={{ height: terminalHeight }}
               initial={{ opacity: 1 }}
               exit={{ opacity: 0, filter: 'blur(6px)' }}
@@ -178,7 +176,7 @@ const CursorLayoutInner: FC<{ children?: React.ReactNode }> = () => {
 
       {isLoading && (
         <motion.div
-          className="fixed inset-0 flex items-center justify-center z-[100] overflow-hidden bg-gray-900 p-4 pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)]"
+          className="fixed inset-0 flex items-center justify-center p-4 overflow-hidden bg-gray-900 z-[100] pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -186,7 +184,7 @@ const CursorLayoutInner: FC<{ children?: React.ReactNode }> = () => {
         >
           {/* Glitch scanlines */}
           <div
-            className="pointer-events-none absolute inset-0 z-10 opacity-[0.06]"
+            className="absolute inset-0 z-10 pointer-events-none opacity-[0.06]"
             style={{
               background:
                 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)',
@@ -195,24 +193,21 @@ const CursorLayoutInner: FC<{ children?: React.ReactNode }> = () => {
           />
           <div className="relative z-0 text-center text-white max-w-[90vw]">
             <motion.p
-              className="font-mono text-base sm:text-lg text-red-400"
+              className="font-mono text-base text-red-400 sm:text-lg"
               animate={{ opacity: [1, 0.7, 1] }}
               transition={{ repeat: Infinity, duration: 0.8 }}
             >
               SYSTEM COMPROMISED
             </motion.p>
             <p className="mt-2 font-mono text-sm text-white/90">Forcing recovery...</p>
-            <motion.div
-              className="relative mx-auto mt-8 h-14 w-14"
-              aria-hidden
-            >
+            <motion.div className="relative mx-auto mt-8 h-14 w-14" aria-hidden>
               <motion.div
-                className="absolute inset-0 rounded-full border-2 border-red-500/50 border-t-transparent"
+                className="absolute inset-0 border-2 rounded-full border-red-500/50 border-t-transparent"
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 0.6, ease: 'linear' }}
               />
               <motion.div
-                className="absolute inset-1 rounded-full border-2 border-white/80 border-t-transparent"
+                className="absolute border-2 rounded-full inset-1 border-white/80 border-t-transparent"
                 animate={{ rotate: -360 }}
                 transition={{ repeat: Infinity, duration: 0.9, ease: 'linear' }}
               />
@@ -223,7 +218,7 @@ const CursorLayoutInner: FC<{ children?: React.ReactNode }> = () => {
 
       {isBlackout && (
         <motion.div
-          className="fixed inset-0 z-[100] bg-black"
+          className="fixed inset-0 bg-black z-[100]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -235,7 +230,7 @@ const CursorLayoutInner: FC<{ children?: React.ReactNode }> = () => {
       <AnimatePresence>
         {isMatrix && (
           <motion.div
-            className="fixed inset-0 z-[95] bg-black"
+            className="fixed inset-0 bg-black z-[95]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -248,13 +243,13 @@ const CursorLayoutInner: FC<{ children?: React.ReactNode }> = () => {
 
       {isRecovered && (
         <motion.div
-          className="fixed inset-0 flex flex-col items-center justify-center z-[100] p-4 text-white bg-gray-900 pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)]"
+          className="fixed inset-0 flex flex-col items-center justify-center p-4 text-white bg-gray-900 z-[100] pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
           <motion.p
-            className="font-mono text-center text-base sm:text-lg max-w-[90vw] text-green-400"
+            className="font-mono text-base text-center text-green-400 sm:text-lg max-w-[90vw]"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.3 }}

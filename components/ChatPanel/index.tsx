@@ -26,7 +26,7 @@ function renderContentWithLinks(content: string): React.ReactNode {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="underline text-blue-600 dark:text-blue-400 hover:underline"
+        className="text-blue-600 underline dark:text-blue-400 hover:underline"
       >
         {url}
       </a>
@@ -102,9 +102,7 @@ function answerFromPortfolio(query: string): string {
   if (/\b(project|portfolio|built|side project)\b/.test(q)) {
     const first = portfolioData.projects[0];
     const link = first?.href || first?.github;
-    const list = portfolioData.projects
-      .map((p) => `${p.title}: ${p.description.slice(0, 60)}...`)
-      .join(' ');
+    const list = portfolioData.projects.map((p) => `${p.title}: ${p.description.slice(0, 60)}...`).join(' ');
     if (link) return `Projects: ${list}. Opening ${first?.title ?? 'project'} for you: ${link}`;
     return `Projects: ${list}. Check the Projects section for more.`;
   }

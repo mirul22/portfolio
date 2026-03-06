@@ -41,7 +41,6 @@ export const MatrixRain: FC<MatrixRainProps> = ({ className = '' }) => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.font = `${FONT_SIZE}px monospace`;
-      const w = canvas.width;
       const colCount = columns.length;
 
       for (let i = 0; i < colCount; i++) {

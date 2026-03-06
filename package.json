@@ -1,6 +1,9 @@
 {
   "name": "personalsite",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",

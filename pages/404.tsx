@@ -8,7 +8,7 @@ const Custom404: FC = () => {
       <p className="mt-2 text-gray-600 dark:text-white-700">Nothing here.</p>
       <Link
         href="/"
-        className="inline-flex items-center justify-center mt-6 min-h-[44px] px-4 py-3 text-sm font-medium text-blue-600 rounded hover:underline dark:text-blue-400 touch-manipulation"
+        className="inline-flex items-center justify-center px-4 py-3 mt-6 text-sm font-medium text-blue-600 rounded min-h-[44px] hover:underline dark:text-blue-400 touch-manipulation"
       >
         Back to home
       </Link>
