@@ -1,17 +1,17 @@
 {
-  "headTitle": "Home | Amirul",
+  "headTitle": "Home | Amirul Ikmal",
   "header": "Home",
   "hero": {
     "title": "Hi, I'm Amirul!",
-    "p0": "Full stack wizard and entrepreneur",
+    "p0": "Software Engineer | AI Engineer | Fullstack",
     "p1": "Senior Software Developer",
     "p2": "Founder of",
     "p3": "Freelancer",
-    "des0": "With 6 years of experience, I have a track record of commended performance in modular and object-oriented programming abilities.",
+    "des0": "With 6+ years of experience, I have a track record of commended performance in modular and object-oriented programming.",
     "des1": "I have maintained, developed, and launched multiple projects, carrying the development of both their back-end and front-end.",
-    "des2": "I love to learn and challenge myself in the scope of programming and UI/UX. My preferred tech stack involves NextJS, ReactJS, Tailwind, Prisma though I'm always excited to flex my other muscles.",
+    "des2": "I love to learn and challenge myself in programming and UI/UX. My preferred tech stack involves Go, NextJS, ReactJS, Tailwind, and Prisma.",
     "des3": "Looking into the future, I aspire to develop great software and services for the next billion users.",
-    "des4": "Laravel dev by day ☀️ and Javascript freak by night🌙"
+    "des4": "Laravel dev by day ☀️ and Javascript freak by night 🌙"
   },
   "projects": {
     "title": "Projects",
@@ -36,6 +36,14 @@
   "experience": {
     "title": "Experience",
     "description": "I've had the honour of working at these amazing companies. Hopefully your company will be there too."
+  },
+  "education": {
+    "title": "Education",
+    "description": "Academic background and continuous learning."
+  },
+  "certifications": {
+    "title": "Licenses & Certifications",
+    "description": "Professional certifications and courses completed."
   },
   "contact": {
     "title": "Want to connect?",

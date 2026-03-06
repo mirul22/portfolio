@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { Container, Logo } from 'components';
+import { useActionLog } from 'components/ActionLog/context';
 import { useOnClickOutside } from 'lib';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -27,7 +28,12 @@ const languages = [
   },
 ];
 
-export const Header: FC = () => {
+interface HeaderProps {
+  embedded?: boolean;
+}
+
+export const Header: FC<HeaderProps> = ({ embedded = false }) => {
+  const { addLog } = useActionLog();
   const [playOnDark] = useSound('/sounds/dark-on.mp3');
   const [playOnLight] = useSound('/sounds/light-on.mp3');
   const visible = useHeaderVisible();
@@ -46,9 +52,9 @@ export const Header: FC = () => {
     } else {
       playOnDark();
     }
-
+    addLog(`Theme: switched to ${theme === Themes.light ? 'dark' : 'light'} mode`, 'action');
     setTheme(theme === Themes.light ? Themes.dark : Themes.light);
-  }, [setTheme, theme, playOnDark, playOnLight]);
+  }, [addLog, setTheme, theme, playOnDark, playOnLight]);
 
   const toggleLangPicker = useCallback(() => {
     setLangPicker((prev) => !prev);
@@ -76,11 +82,18 @@ export const Header: FC = () => {
   return (
     <div
       className={clsx(
-        'fixed z-20 w-full opacity-90 bg-lightTheme dark:bg-darkTheme transition-top duration-300',
-        visible ? 'top-0' : '-top-28'
+        'w-full transition-top duration-300',
+        embedded
+          ? 'relative border-b border-gray-200 bg-gray-100 py-2 dark:border-cursor-border dark:bg-cursor-sidebar'
+          : clsx('fixed z-20 opacity-90 bg-lightTheme dark:bg-darkTheme', visible ? 'top-0' : '-top-28')
       )}
     >
-      <Container className="flex items-center justify-between w-auto py-5 md:py-9 text-black-900 dark:text-white-900">
+      <Container
+        className={clsx(
+          'flex w-auto items-center justify-between text-gray-900 dark:text-white-900',
+          embedded ? 'gap-2 py-2 px-3 sm:px-4' : 'py-5 px-4 md:py-9 md:px-6'
+        )}
+      >
         <Link href="/">
           <a href="/">
             <Logo />

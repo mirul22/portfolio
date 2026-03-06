@@ -3,11 +3,42 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
 html {
   @apply bg-lightTheme;
+  -webkit-text-size-adjust: 100%;
 }
 
 html.dark {
   @apply bg-darkTheme;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Prevent long URLs/words from overflowing on mobile */
+.cursor-layout__editor p,
+.cursor-layout__editor a,
+.cursor-layout__editor li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Cursor-style layout: flex + resizable panels (sizes in PanelResizeContext) */
+.cursor-layout__topbar {
+  /* topbar is first flex child */
+}
+
+.cursor-layout__explorer,
+.cursor-layout__editor,
+.cursor-layout__chat,
+.cursor-layout__terminal {
+  /* panel classes for styling hooks */
+}
+
+/* Mobile: reduce double-tap zoom delay on buttons/links */
+.touch-manipulation {
+  touch-action: manipulation;
 }

@@ -627,6 +627,17 @@ export const FirebaseIcon: FC<Props> = ({ className }: Props) => {
   );
 };
 
+export const PhpIcon: FC<Props> = ({ className }: Props) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="none">
+      <path
+        fill="#777BB4"
+        d="M12.005 12.114h-1.5l-.75 3.614h1.5l.75-3.614zm-2.864-3.614H6.591l-1.5 7.228h1.5l.398-1.91h1.193l.398 1.91h1.5l1.5-7.228h-1.5l-.398 1.91H8.14l-.398-1.91zm7.728 0h-1.5l-1.5 7.228h1.5l.398-1.91h1.193l.398 1.91h1.5l1.5-7.228h-1.5l-.398 1.91h-1.193l-.398-1.91z"
+      />
+    </svg>
+  );
+};
+
 export const PostmanIcon: FC<Props> = ({ className }: Props) => {
   return (
     <svg

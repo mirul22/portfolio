@@ -1,13 +1,13 @@
 export default {
-  title: 'Amirul Ikmal | Software Developer | Programmer | UI UX Designer',
+  title: 'Amirul Ikmal | Software Engineer | AI Engineer | Fullstack (Go, PHP, JS/TS)',
   description:
-    'Experienced programmer with expertise in full-stack development, UI/UX design, and Laravel & JavaScript. Passionate about creating high-quality software for a global user base. Specializing in NextJS, ReactJS, Tailwind, and Prisma. Continuously learning and evolving to deliver exceptional solutions. 🚀🚀🚀',
+    'Software Engineer at Vorto. 8+ years full-stack. AI workflow automation, LAM, Go, TypeScript, React. Founder of Soskod Solution. Open to full-time & contract • Remote.',
   canonical: 'https://amirulikmal.com',
   openGraph: {
     url: 'https://amirulikmal.com',
-    title: 'Amirul Ikmal | Software Developer | Programmer | UI UX Designer',
+    title: 'Amirul Ikmal | Software Engineer | AI Engineer | Fullstack (Go, PHP, JS/TS)',
     description:
-      'Experienced programmer with expertise in full-stack development, UI/UX design, and Laravel & JavaScript. Passionate about creating high-quality software for a global user base. Specializing in NextJS, ReactJS, Tailwind, and Prisma. Continuously learning and evolving to deliver exceptional solutions.',
+      'Software Engineer at Vorto. 8+ years full-stack. AI workflow automation, LAM. Go, TypeScript, React. Open to full-time & contract • Remote.',
     images: [
       {
         url: 'https://amirulikmal.com/hire-me-sir.jpg',
@@ -22,6 +22,6 @@ export default {
         alt: 'OG Alt Portrait',
       },
     ],
-    site_name: 'Amirul Ikmal | Software Developer | Programmer | UI UX Designer',
+    site_name: 'Amirul Ikmal | Software Engineer | Fullstack',
   },
 };

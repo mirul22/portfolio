@@ -26,8 +26,21 @@ module.exports = {
         700: '#404040',
       },
       pink: '#EEE8F6',
+      // Cursor IDE–style theme
+      cursor: {
+        sidebar: '#252526',
+        editor: '#1e1e1e',
+        border: '#3c3c3c',
+        terminalBg: '#1e1e1e',
+        terminalGreen: '#4ec9b0',
+        terminalAmber: '#dcdcaa',
+      },
     },
     extend: {
+      fontFamily: {
+        sans: ['Rubik', ...defaultTheme.fontFamily.sans],
+        mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
+      },
       keyframes: {
         fadeIn: {
           '0%': {
@@ -45,9 +58,6 @@ module.exports = {
       },
       transitionProperty: {
         top: 'top',
-      },
-      fontFamily: {
-        sans: ['Rubik', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         '5xl': '2.8125rem',
