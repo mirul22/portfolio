@@ -53,11 +53,11 @@ export const Hero: FC = () => {
         )}
       </p>
       {about.customServices && about.customServices.items.length > 0 && (
-        <div className="mt-5 rounded-lg border-2 border-blue-200 bg-blue-50/80 p-4 dark:border-blue-800 dark:bg-blue-950/30">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">
+        <div className="p-4 mt-5 border-2 border-blue-200 rounded-lg bg-blue-50/80 dark:border-blue-800 dark:bg-blue-950/30">
+          <p className="mb-3 text-sm font-semibold tracking-wide text-blue-700 uppercase dark:text-blue-300">
             {about.customServices.title}
           </p>
-          <ul className="space-y-2 text-sm text-gray-700 dark:text-white-700">
+          <ul className="text-sm text-gray-700 space-y-2 dark:text-white-700">
             {about.customServices.items.map((s, i) => (
               <li key={i} className="flex flex-col gap-0.5">
                 <span className="font-medium text-gray-900 dark:text-white-900">{s.label}</span>

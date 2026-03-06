@@ -82,7 +82,9 @@ function answerFromPortfolio(query: string): string {
     const svc = portfolioData.about.customServices;
     if (svc && svc.items.length > 0) {
       const list = svc.items.map((s) => `${s.label}: ${s.description}`).join(' ');
-      return `${svc.title}. ${list} Book a call to discuss your project: ${portfolioData.about.calendlyHref || portfolioData.about.email}.`;
+      return `${svc.title}. ${list} Book a call to discuss your project: ${
+        portfolioData.about.calendlyHref || portfolioData.about.email
+      }.`;
     }
     return `Amirul offers custom development: websites, scripting, FiveM/RedM resources, and fully custom systems. Reach out at ${portfolioData.about.email} or book a call.`;
   }
