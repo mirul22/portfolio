@@ -413,6 +413,17 @@ export const TerminalPanel: FC<TerminalPanelProps> = ({ style }) => {
                 spellCheck={false}
                 autoComplete="off"
               />
+              <button
+                type="button"
+                onClick={() => {
+                  runCommand(input);
+                  setInput('');
+                }}
+                className="shrink-0 lg:hidden min-h-[44px] min-w-[44px] px-3 py-2 rounded text-xs font-medium bg-emerald-600/20 text-emerald-600 dark:bg-cursor-terminalGreen/20 dark:text-cursor-terminalGreen touch-manipulation"
+                aria-label="Run command"
+              >
+                Run
+              </button>
             </div>
             <div ref={bottomRef} />
           </div>

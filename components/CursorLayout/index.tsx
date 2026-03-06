@@ -162,7 +162,7 @@ const CursorLayoutInner: FC<{ children?: React.ReactNode }> = () => {
           {showTerminal && (
             <motion.div
               key="terminal"
-              className="flex w-full shrink-0"
+              className="flex w-full min-h-[160px] shrink-0 lg:min-h-0"
               style={{ height: terminalHeight }}
               initial={{ opacity: 1 }}
               exit={{ opacity: 0, filter: 'blur(6px)' }}
@@ -218,7 +218,8 @@ const CursorLayoutInner: FC<{ children?: React.ReactNode }> = () => {
 
       {isBlackout && (
         <motion.div
-          className="fixed inset-0 bg-black z-[100]"
+          className="fixed inset-0 z-[100]"
+          style={{ backgroundColor: '#000000' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
