@@ -70,6 +70,11 @@ export interface PortfolioData {
     testimonial?: { quote: string; author: string; roleOrContext?: string };
     /** Optional: Calendly or similar "Book a call" URL */
     calendlyHref?: string;
+    /** Optional: custom services / offerings for freelance & contract */
+    customServices?: {
+      title: string;
+      items: { label: string; description: string }[];
+    };
   };
   experience: ExperienceItem[];
   projects: ProjectItem[];
@@ -105,6 +110,36 @@ export const portfolioData: PortfolioData = {
       roleOrContext: 'Former colleague',
     },
     calendlyHref: 'https://calendly.com/amirulikmal-biz/30min',
+    customServices: {
+      title: 'Custom development & consulting',
+      items: [
+        {
+          label: 'Custom websites & web apps',
+          description:
+            'From landing pages to full-stack web applications—responsive, fast, and built to convert. Modern stacks (React, Next.js, Go) with clean code and clear delivery.',
+        },
+        {
+          label: 'Scripting & automation',
+          description:
+            'Scripts and tooling that save time and reduce errors: automation, integrations, data pipelines, and CLI tools tailored to your workflow.',
+        },
+        {
+          label: 'FiveM & RedM development',
+          description:
+            'Custom resources, scripts, and systems for FiveM (GTA V) and RedM (Red Dead Redemption 2) multiplayer. Server-side Lua/JS, game logic, and polished in-game experiences.',
+        },
+        {
+          label: 'Fully custom systems',
+          description:
+            'Bespoke software from the ground up—APIs, backends, dashboards, and end-to-end systems designed for your requirements, scale, and long-term maintainability.',
+        },
+        {
+          label: 'AI agents, automation & modern tooling',
+          description:
+            'Help your business adopt what’s working now: AI agents, RAG, workflow automation (e.g. LangChain, LAMs), and setup with modern AI-assisted dev tools (Claude, Cursor, etc.). From proof-of-concept to production-ready pipelines.',
+        },
+      ],
+    },
   },
   experience: [
     {
@@ -341,6 +376,13 @@ export function getPortfolioKnowledgeText(): string {
       d.about.testimonial.roleOrContext || ''
     );
   }
+  const serviceParts: string[] = [];
+  if (d.about.customServices) {
+    serviceParts.push(d.about.customServices.title);
+    d.about.customServices.items.forEach((s) => {
+      serviceParts.push(s.label, s.description);
+    });
+  }
   const parts: string[] = [
     d.about.name,
     d.about.headline,
@@ -351,6 +393,7 @@ export function getPortfolioKnowledgeText(): string {
     d.about.currentlyExploring || '',
     d.about.calendlyHref || '',
     ...testimonialParts,
+    ...serviceParts,
     ...expParts,
     ...projectParts,
     ...eduParts,

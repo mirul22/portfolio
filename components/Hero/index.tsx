@@ -52,6 +52,21 @@ export const Hero: FC = () => {
           <span className="block mt-2 text-sm font-medium text-blue-600 dark:text-blue-400">{about.availability}</span>
         )}
       </p>
+      {about.customServices && about.customServices.items.length > 0 && (
+        <div className="mt-5 rounded-lg border-2 border-blue-200 bg-blue-50/80 p-4 dark:border-blue-800 dark:bg-blue-950/30">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">
+            {about.customServices.title}
+          </p>
+          <ul className="space-y-2 text-sm text-gray-700 dark:text-white-700">
+            {about.customServices.items.map((s, i) => (
+              <li key={i} className="flex flex-col gap-0.5">
+                <span className="font-medium text-gray-900 dark:text-white-900">{s.label}</span>
+                <span className="text-gray-600 dark:text-white-600">{s.description}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="flex mt-5 gap-4">
         {about.socials.map((s) => (
           <MediaIcon
