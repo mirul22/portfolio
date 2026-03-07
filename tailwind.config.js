@@ -1,8 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class', // whenever dark mode is present in html root, dark mode will be applied.
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     colors: {
       darkTheme: '#171a23',
@@ -63,11 +63,6 @@ module.exports = {
         '5xl': '2.8125rem',
         sectionHeader: '1.75rem',
       },
-    },
-  },
-  variants: {
-    extend: {
-      opacity: ['dark'],
     },
   },
   plugins: [],

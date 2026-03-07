@@ -10,13 +10,11 @@ module.exports = {
   },
   plugins: ['import', 'simple-import-sort'],
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
+    'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:tailwind/recommended',
+    'plugin:tailwindcss/recommended',
     'plugin:prettier/recommended',
   ],
   rules: {
@@ -41,6 +39,10 @@ module.exports = {
   settings: {
     react: {
       version: 'detect',
+    },
+    tailwindcss: {
+      callees: ['cn', 'clsx', 'cva'],
+      config: 'tailwind.config.js',
     },
   },
 };
