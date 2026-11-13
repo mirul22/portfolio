@@ -7,10 +7,10 @@ export function PrintButton() {
     <button
       type="button"
       onClick={() => window.print()}
-      className="inline-flex min-h-11 w-fit items-center gap-2 rounded-full border border-border bg-surface px-5 text-sm font-medium hover:border-muted"
+      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border bg-surface px-5 text-sm font-medium transition-colors hover:border-muted motion-reduce:transition-none"
     >
       <FileText className="size-4" />
-      Print / Save as PDF
+      Print
     </button>
   );
 }

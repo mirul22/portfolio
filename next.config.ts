@@ -40,7 +40,13 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   async headers() {
-    return [{ source: '/:path*', headers: securityHeaders }];
+    return [
+      { source: '/:path*', headers: securityHeaders },
+      {
+        source: '/amirul-ikmal-resume.pdf',
+        headers: [{ key: 'Content-Disposition', value: 'attachment; filename="Amirul-Ikmal-Resume.pdf"' }],
+      },
+    ];
   },
   async redirects() {
     return [

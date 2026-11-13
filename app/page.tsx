@@ -55,8 +55,8 @@ export default function HomePage() {
           <p className="mt-6 max-w-2xl text-lg text-pretty text-muted sm:text-xl">
             I co-founded <strong className="font-medium text-fg">Certava</strong>, an AI platform for ISO compliance,
             and I work as a software engineer at <strong className="font-medium text-fg">Vorto</strong>. In my own time
-            I build <strong className="font-medium text-fg">Kirabaki</strong>, a WhatsApp bot that uses an LLM to record
-            sales from Malay messages, receipt photos and voice notes, and{' '}
+            I build <strong className="font-medium text-fg">Kirabaki</strong>, a WhatsApp bot in a pilot with KatalogKu
+            sellers. It uses an LLM to record sales from Malay messages, receipt photos and voice notes. I also build{' '}
             <strong className="font-medium text-fg">KatalogKu</strong>, a free online catalog that sends orders to
             WhatsApp.
           </p>

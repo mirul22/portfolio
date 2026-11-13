@@ -40,6 +40,7 @@ export function WorkCard({
         </Heading>
         <p className={cn('font-medium text-pretty', large ? 'text-lg' : 'text-base')}>{study.tagline}</p>
         {(showOutcome ?? large) && <p className={cn('text-pretty text-muted', large && 'text-lg')}>{study.outcome}</p>}
+        {study.impact && <p className="text-sm text-pretty text-muted">{study.impact}</p>}
         <p className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-accent">
           Read case study
           <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none" />

@@ -50,12 +50,11 @@ export const about = {
   name: 'Amirul Ikmal',
   location: 'Malaysia',
   availability: 'Open to full-time and contract work, remote',
-  currentlyExploring: 'AI agents, RAG and evaluation pipelines.',
   bio: [
-    'I am a software engineer in Malaysia. I started in 2017 as a system programmer on the VIBES system for JHEV, and I have written production software every year since.',
-    'Today I am Technical Co-Founder of Certava, an AI platform for ISO compliance, and a software engineer at Vorto, where I have made more than 2,100 code contributions since 2024 on a real-time logistics platform and work on AI workflow automation and LAM (Language-Action Models).',
-    'Outside of that I build two products for small sellers in Malaysia who already do business on WhatsApp. Kirabaki is a WhatsApp bot that uses an LLM to record sales from Malay messages, receipt photos and voice notes. KatalogKu is a free product catalog that sends orders to WhatsApp.',
-    'Most of my work is in Go, TypeScript and PHP. I am strongest at designing AI workflows and backend services, and I care about reliability and getting the data right.',
+    "Software engineer in Malaysia with 9 years of shipping production systems, now focused on AI and LLM products. I co-founded Certava, an AI tool that shows companies how close they are to ISO 9001, 14001 and 45001, backed by about RM100k from Cradle Fund. On my own I built KatalogKu, a WhatsApp ordering catalog used by 162 sellers with RM18k+ in sales, and Kirabaki, a Malay WhatsApp bot that turns texts, receipt photos and voice notes into bookkeeping. By day I work on backend services and AI automation for Vorto's real-time logistics platform. Before that I spent years on government and enterprise systems, from SKMM's online exams to a passport and visa system used at 7 Myanmar embassies.",
+    'Today I am Technical Co-Founder of Certava, an AI platform for ISO compliance, and a software engineer at Vorto, where I have made more than 2,100 code contributions since 2024 on a real-time logistics platform.',
+    'Outside of that I build two products for small sellers in Malaysia who already do business on WhatsApp. Kirabaki is a WhatsApp bot in a pilot with KatalogKu sellers. An LLM turns Malay messages, receipt photos and voice notes into sales entries. KatalogKu is a free product catalog used by 162 Malaysian sellers, with 1,500+ products, 726 orders and RM18k+ in completed sales so far (Nov 2026).',
+    'Most of my work is in Go, TypeScript and PHP. The AI work is the Certava clause mapping and gap reports, and Kirabaki parsing sales from WhatsApp. I care about reliability and getting the data right.',
   ],
 };
 
@@ -63,7 +62,7 @@ export const services: Service[] = [
   {
     title: 'AI and LLM products',
     description:
-      'Certava uses Gemini and OpenAI for ISO gap analysis, SOP drafts and risk registers. Kirabaki uses an LLM to turn Malay WhatsApp messages, receipt photos and voice notes into sales records. At Vorto I work on AI workflow automation and LAM.',
+      'Certava uses Gemini and OpenAI to map uploaded policies to ISO clauses and write gap reports, SOP drafts and risk register entries. Kirabaki uses an LLM to turn Malay WhatsApp messages, receipt photos and voice notes into sales entries.',
   },
   {
     title: 'Full-stack web apps',
@@ -77,7 +76,7 @@ export const services: Service[] = [
   {
     title: 'WhatsApp tools for small sellers',
     description:
-      'KatalogKu sends customer orders to the seller on WhatsApp. Kirabaki lets sellers record sales by texting a bot in Malay.',
+      'KatalogKu sends customer orders to the seller on WhatsApp. Kirabaki, in a pilot with KatalogKu sellers, turns Malay messages, receipt photos and voice notes into sales entries.',
   },
 ];
 
@@ -100,8 +99,8 @@ export const experience: ExperienceItem[] = [
     companyUrl: 'https://certava.ai',
     date: '2024 – Present',
     bullets: [
-      'Co-founded an ISO compliance and gap analysis platform. I handle the engineering.',
-      'Built the Gemini and OpenAI workflows for gap analysis, SOP drafts and risk registers, plus PDF and DOCX reports and Stripe billing.',
+      'Co-founded an ISO compliance and gap analysis platform. I handle the engineering. Secured about RM100k in Cradle Fund funding.',
+      'Built Gemini and OpenAI workflows that map uploaded policies to ISO clauses, draft SOPs and risk register entries, and export PDF and DOCX reports. Stripe handles billing.',
     ],
   },
   {
@@ -114,7 +113,6 @@ export const experience: ExperienceItem[] = [
     bullets: [
       'Made 2,100+ code contributions since 2024 on a real-time logistics SaaS platform.',
       'Designed backend microservices to make the system more resilient and keep data consistent.',
-      'Work on AI workflow automation and LAM.',
       'Work with other teams on continuous deployment.',
     ],
   },
@@ -124,10 +122,8 @@ export const experience: ExperienceItem[] = [
     company: 'Soskod Solution',
     place: 'Kuala Lumpur, Malaysia',
     date: 'Jan 2022 – Present',
-    bullets: [
-      'Build web and mobile apps for clients in Go, React and Node.js.',
-      'Scope and design the architecture for consulting projects.',
-    ],
+    type: 'Part-time',
+    bullets: ['Part-time consulting business. I build web and mobile apps for clients in Go, React and Node.js.'],
   },
   {
     title: 'Senior Software Developer',
@@ -135,10 +131,7 @@ export const experience: ExperienceItem[] = [
     place: 'Kuala Lumpur, Malaysia · Hybrid',
     date: 'Jan 2023 – May 2024',
     type: 'Full-time',
-    bullets: [
-      'Shipped production features for network and software products.',
-      'Worked with other teams on design and delivery.',
-    ],
+    // No project-level detail in the repo for this role. Leave the bullets off rather than write a generic line.
   },
   {
     title: 'Programmer',
@@ -147,9 +140,11 @@ export const experience: ExperienceItem[] = [
     date: 'Aug 2019 – Jan 2023',
     type: 'Full-time',
     bullets: [
-      'Completed: Portal Kempen Tabung Pahlawan, Portal Pengemaskinian Maklumat Veteran, Usahawan JHEV mobile apps.',
-      'Led the team building Mycraftshoppe, an online shopping platform (web portal and mobile apps).',
-      'Worked on new technology for the revamp of Veteran Integrated Benefits (VIBES) at JHEV.',
+      'Built Portal Kempen Tabung Pahlawan 2019, a campaign portal with online payment through MPAY and a CMS (ASP.NET, C#).',
+      'Built the veteran information update portal (Portal Pengemaskinian Maklumat Veteran), with user and role-scoped access (ASP.NET, C#).',
+      'Built Usahawan JHEV, an e-marketplace portal plus Android and iOS apps (PHP Laravel, Java, Swift).',
+      'Led the team building MyCraftShoppe, an e-marketplace portal and mobile app (PHP Laravel, React Native).',
+      'Worked on the VIBES 2.0 rebuild at JHEV, a web portal and mobile app (C#, ASP.NET).',
     ],
   },
   {
@@ -158,7 +153,7 @@ export const experience: ExperienceItem[] = [
     place: 'Shah Alam, Selangor',
     date: 'Dec 2018 – Jul 2019',
     type: 'Full-time',
-    bullets: ['Built and maintained software for client projects.', 'Web and backend work in an agile team.'],
+    // No project-level detail in the repo for this role. Leave the bullets off rather than write a generic line.
   },
   {
     title: 'Analyst Programmer',
@@ -166,7 +161,7 @@ export const experience: ExperienceItem[] = [
     place: 'Petaling Jaya',
     date: 'Jun 2018 – Nov 2018',
     type: 'Full-time',
-    bullets: ['Analysis and development of in-house software.', 'Delivery and documentation for business systems.'],
+    // No project-level detail in the repo for this role. Leave the bullets off rather than write a generic line.
   },
   {
     title: 'System Programmer',
@@ -229,20 +224,7 @@ export const certifications: CertificationItem[] = [
     date: 'Nov 2021',
     credentialId: '8B8FTHR5MVYK',
   },
-  {
-    title: 'MERN Stack Front To Back: Full Stack React, Redux & Node.js',
-    issuer: 'Udemy',
-    date: 'Mar 2019',
-    credentialId: 'UC-IGPEU5YN',
-  },
   { title: 'Mastering React', issuer: 'Code With Mosh', date: 'Feb 2019', credentialId: 'cert_bzq60519' },
-  {
-    title: 'The Complete JavaScript Course 2019: Build Real Projects!',
-    issuer: 'Udemy',
-    date: 'Feb 2019',
-    credentialId: 'UC-LFAS5785',
-  },
-  { title: 'The Web Developer Bootcamp', issuer: 'Udemy', date: 'May 2018', credentialId: 'UC-F6S1EQ4J' },
 ];
 
 // Ordered by what I lead with. Only list things I have used in real work (see lib/work.ts and content/client-work.ts).
@@ -250,12 +232,8 @@ export const skillGroups: SkillGroup[] = [
   {
     title: 'AI and LLM products',
     items: [
-      'LLM app development with Gemini and OpenAI (Certava)',
-      'Agentic workflows and tool-calling (AI workflow automation and LAM at Vorto)',
-      'Document understanding and RAG for ISO compliance (Certava)',
-      'WhatsApp bots that read Malay text, receipt photos and voice notes (Kirabaki)',
-      'Prompt design and evals',
-      'Building with AI coding agents (Cursor, Claude)',
+      'Gemini and OpenAI clause mapping and gap reports (Certava)',
+      'LLM parsing of Malay WhatsApp messages, receipt photos and voice notes into sales entries (Kirabaki)',
     ],
   },
   {

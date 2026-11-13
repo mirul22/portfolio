@@ -11,8 +11,8 @@ export const siteConfig = {
   country: 'Malaysia',
   email: 'amirulikmal.biz@gmail.com',
   bookingUrl: 'https://calendly.com/amirulikmal-biz/30min',
-  // TODO(owner): add a PDF resume at /public/resume.pdf and set this to '/resume.pdf'.
-  resumePdf: undefined as string | undefined,
+  // Generated from /resume by `npm run resume:pdf`; regenerate after changing resume content.
+  resumePdf: { href: '/amirul-ikmal-resume.pdf', filename: 'Amirul-Ikmal-Resume.pdf' },
   sourceUrl: 'https://github.com/mirul22/portfolio',
   socials: [
     { label: 'GitHub', href: 'https://github.com/mirul22', handle: 'mirul22' },
