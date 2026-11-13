@@ -6,7 +6,7 @@ export const siteConfig = {
   legalName: 'Muhammad Amirul Ikmal Bin Mohd Ridzwan',
   title: 'Amirul Ikmal, software engineer in Malaysia',
   description:
-    'I am Amirul Ikmal, a software engineer in Malaysia. I co-founded Certava, an ISO compliance platform, work at Vorto, and build Kirabaki and KatalogKu for small sellers.',
+    'I am Amirul Ikmal, a software engineer in Malaysia who builds LLM products. I co-founded Certava, an AI platform for ISO compliance, work at Vorto, and build Kirabaki and KatalogKu for small sellers.',
   locale: 'en',
   country: 'Malaysia',
   email: 'amirulikmal.biz@gmail.com',

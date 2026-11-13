@@ -7,19 +7,17 @@ import { ExperienceTimeline } from '@/components/experience-timeline';
 import { FileText } from '@/components/icons';
 import { JsonLd } from '@/components/json-ld';
 import { Badge, ButtonLink, Card, Container, PageHeader, Section } from '@/components/ui';
-import { about, certifications, education, experience, otherServices, skills } from '@/lib/portfolioData';
+import { about, certifications, education, experience, otherServices, skillGroups } from '@/lib/portfolioData';
 import { breadcrumbJsonLd, graph, pageMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site';
 
 export const metadata = pageMetadata({
   title: 'About',
   description:
-    'About Amirul Ikmal: software engineer in Malaysia since 2017, Technical Co-Founder of Certava, builder of Kirabaki and KatalogKu. Work history, skills and education.',
+    'About Amirul Ikmal: software engineer in Malaysia since 2017 who builds LLM products. Technical Co-Founder of Certava, builder of Kirabaki and KatalogKu. Skills, work history and education.',
   path: '/about',
   type: 'profile',
 });
-
-const skillGroups = ['Languages', 'Frameworks', 'Data', 'Platform & tools'] as const;
 
 export default function AboutPage() {
   return (
@@ -69,7 +67,10 @@ export default function AboutPage() {
           <h3 className="text-xl font-semibold tracking-tight">Earlier client work</h3>
           <p className="mt-2 mb-6 max-w-2xl text-pretty text-muted">
             Projects I shipped with previous employers before Vorto.{' '}
-            <Link href="/work#client-work" className="text-accent underline-offset-4 hover:underline">
+            <Link
+              href="/work#client-work"
+              className="text-accent underline underline-offset-4 hover:text-accent-strong"
+            >
               Full list with scope
             </Link>
             .
@@ -78,20 +79,32 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section id="skills" eyebrow="Skills" title="What I use" className="border-t border-border">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {skillGroups.map((group) => (
-            <Card key={group}>
-              <h3 className="font-semibold">{group}</h3>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {skills
-                  .filter((s) => s.group === group)
-                  .map((s) => (
-                    <li key={s.name}>
-                      <Badge>{s.name}</Badge>
+      <Section
+        id="skills"
+        eyebrow="Skills"
+        title="What I work with"
+        description="AI and LLM product work first. Each item comes from something I have built or work on."
+        className="border-t border-border"
+      >
+        <div className="grid gap-5 md:grid-cols-2">
+          {skillGroups.map((group, i) => (
+            <Card key={group.title} className={i === 0 ? 'md:col-span-2' : undefined}>
+              <h3 className="font-semibold">{group.title}</h3>
+              {i === 0 ? (
+                <ul className="mt-4 grid list-disc gap-x-8 gap-y-2 pl-5 text-muted marker:text-accent md:grid-cols-2">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <li key={item}>
+                      <Badge>{item}</Badge>
                     </li>
                   ))}
-              </ul>
+                </ul>
+              )}
             </Card>
           ))}
         </div>
@@ -104,7 +117,7 @@ export default function AboutPage() {
         description="Smaller jobs I still do for clients."
         className="border-t border-border"
       >
-        <ul className="grid gap-5 md:grid-cols-3">
+        <ul className="grid gap-5 md:grid-cols-2">
           {otherServices.map((s) => (
             <li key={s.title}>
               <Card className="h-full">

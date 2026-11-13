@@ -48,7 +48,7 @@ Content rules:
 - [ ] Real metrics for Certava, Kirabaki and KatalogKu (`results` in `lib/work.ts`). The Results section appears once you add them.
 - [ ] Real LinkedIn recommendations in `content/testimonials.ts`.
 - [ ] PDF resume at `public/resume.pdf`, then set `resumePdf` in `lib/site.ts`.
-- [ ] Kirabaki: start date, tech stack, how messages are parsed, where records are stored, your role, roadmap.
+- [ ] Kirabaki: start date, which LLM/provider does the parsing, where records are stored, your role, roadmap.
 - [ ] KatalogKu: confirm solo build, roadmap.
 - [ ] Certava: roadmap; confirm the decision and trade-off wording.
 - [ ] Confirm the Vorto role is still current (`lib/portfolioData.ts`).

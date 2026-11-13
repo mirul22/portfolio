@@ -1,7 +1,7 @@
 import { PrintButton } from '@/components/print-button';
 import { Container, ExternalLink } from '@/components/ui';
 import { clientStack, clientWork } from '@/content/client-work';
-import { about, certifications, education, experience, skills } from '@/lib/portfolioData';
+import { about, certifications, education, experience, skillGroups } from '@/lib/portfolioData';
 import { pageMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site';
 import { caseStudies } from '@/lib/work';
@@ -29,7 +29,7 @@ export default function ResumePage() {
       <header className="border-b border-border pb-6">
         <h1 className="text-4xl font-semibold tracking-tight">{siteConfig.name}</h1>
         <p className="mt-1 text-sm text-muted">{siteConfig.legalName}</p>
-        <p className="mt-3 text-lg">Software engineer. Technical Co-Founder of Certava.</p>
+        <p className="mt-3 text-lg">Software engineer building LLM products. Technical Co-Founder of Certava.</p>
         <p className="mt-2 text-sm text-muted">
           {about.location} · {about.availability} ·{' '}
           <a href={`mailto:${siteConfig.email}`} className="underline-offset-4 hover:underline">
@@ -44,6 +44,20 @@ export default function ResumePage() {
           Summary
         </h2>
         <p className="mt-3 text-muted">{about.bio[0]}</p>
+      </section>
+
+      <section aria-labelledby="r-skills" className="border-t border-border py-6">
+        <h2 id="r-skills" className="text-sm font-semibold tracking-widest text-accent uppercase">
+          Skills
+        </h2>
+        <dl className="mt-3 space-y-2 text-sm">
+          {skillGroups.map((g) => (
+            <div key={g.title}>
+              <dt className="font-medium">{g.title}</dt>
+              <dd className="text-muted">{g.items.join('; ')}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       <section aria-labelledby="r-products" className="border-t border-border py-6">
@@ -106,13 +120,6 @@ export default function ResumePage() {
             </li>
           ))}
         </ul>
-      </section>
-
-      <section aria-labelledby="r-skills" className="border-t border-border py-6">
-        <h2 id="r-skills" className="text-sm font-semibold tracking-widest text-accent uppercase">
-          Skills
-        </h2>
-        <p className="mt-3 text-sm text-muted">{skills.map((s) => s.name).join(' · ')}</p>
       </section>
 
       <section aria-labelledby="r-edu" className="border-t border-border py-6">

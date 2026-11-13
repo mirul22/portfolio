@@ -1,6 +1,6 @@
 import { clientWork } from '@/content/client-work';
 import { publishedPosts } from '@/content/writing/posts';
-import { about, experience, services } from '@/lib/portfolioData';
+import { about, experience, services, skillGroups } from '@/lib/portfolioData';
 import { absoluteUrl, siteConfig } from '@/lib/site';
 import { caseStudies } from '@/lib/work';
 
@@ -36,6 +36,10 @@ export function GET() {
       )
     ),
     `- Details: ${absoluteUrl('/work#client-work')}`,
+    '',
+    '## Skills',
+    '',
+    ...skillGroups.map((g) => `- ${g.title}: ${g.items.join('; ')}`),
     '',
     '## What I do',
     '',

@@ -50,11 +50,11 @@ export const caseStudies: CaseStudy[] = [
     slug: 'certava',
     name: 'Certava',
     url: 'https://certava.ai',
-    tagline: 'ISO compliance platform',
+    tagline: 'AI platform for ISO compliance',
     outcome:
       'Certava shows quality teams where they stand on ISO 9001, 14001 and 45001: which clauses, risks, controls and evidence are covered, weak or missing.',
     summary:
-      'Certava is an ISO intelligence and compliance platform. It runs gap analysis against ISO standards, drafts SOPs, keeps a risk register and produces PDF and DOCX reports, using Google Gemini and OpenAI.',
+      'Certava is an AI platform for ISO intelligence and compliance. It runs gap analysis against ISO standards, drafts SOPs, keeps a risk register and produces PDF and DOCX reports, using Google Gemini and OpenAI.',
     role: 'Technical Co-Founder',
     timeline: '2024 to now',
     status: 'Live',
@@ -132,13 +132,13 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       'Small sellers record their sales and expenses by sending Kirabaki a WhatsApp message in Malay, like “masuk 120 kopi”. It saves the record and works out the day’s profit.',
     summary:
-      'Kirabaki is a WhatsApp bot that does simple bookkeeping in Malay for small sellers in Malaysia. Sellers type a message, snap a receipt or send a voice note, and Kirabaki records the sale or expense.',
+      'Kirabaki is a WhatsApp bot that does simple bookkeeping in Malay for small sellers in Malaysia. Sellers type a message, snap a receipt or send a voice note, and an LLM turns it into a sale or expense record.',
     role: 'Builder',
     // TODO(owner): add start date (timeline), tech stack and your role details.
     status: 'Live, free during the pilot',
     category: 'WhatsApp bot',
     appCategory: 'FinanceApplication',
-    stack: ['WhatsApp'],
+    stack: ['WhatsApp', 'LLM'],
     problem: [
       'Plenty of small sellers in Malaysia run the whole business from WhatsApp. Sales get written in a notebook, or not at all, so they don’t know their profit for the day.',
       'Accounting apps mean installing something new, filling in forms, and usually reading English.',
@@ -149,15 +149,16 @@ export const caseStudies: CaseStudy[] = [
       'Sellers should not need to install an app or create an account somewhere else.',
     ],
     myRole: [],
-    // TODO(owner): explain how messages are parsed (rules, LLM or both) and where records are stored.
+    // TODO(owner): add which model/provider does the parsing and where records are stored.
     approach: [
       'A seller sends Kirabaki a message such as “masuk 120 kopi”.',
-      'Kirabaki reads it, saves it as a sale and confirms with a tick in the chat.',
-      'Sellers can also snap a receipt or record a voice note, and ask for the day’s profit at any time.',
+      'An LLM reads the message and works out the item and amount. Kirabaki saves it as a sale and confirms with a tick in the chat.',
+      'Receipt photos and voice notes go through the same parsing. Sellers can ask for the day’s profit at any time.',
     ],
     architecture: [
       { label: 'Seller on WhatsApp', detail: 'Text, receipt photo or voice note, in Malay' },
-      { label: 'Kirabaki bot', detail: 'Reads the message, records the sale or expense' },
+      { label: 'LLM parsing', detail: 'Turns the message, photo or voice note into a record' },
+      { label: 'Kirabaki bot', detail: 'Saves the sale or expense' },
       { label: 'Reply in WhatsApp', detail: 'Confirmation and today’s profit' },
     ],
     decisions: [
