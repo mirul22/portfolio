@@ -32,6 +32,7 @@ Optional env var: `NEXT_PUBLIC_SITE_URL` (defaults to `https://amirulikmal.com`)
 | Bio, services, experience, education, skills   | `lib/portfolioData.ts`                                                        |
 | Case studies (Certava, Kirabaki, KatalogKu)    | `lib/work.ts`                                                                 |
 | Testimonials                                   | `content/testimonials.ts`                                                     |
+| Earlier client work                            | `content/client-work.ts`                                                      |
 | Writing posts                                  | `content/writing/posts.ts` (metadata) and `content/writing/<slug>.mdx` (body) |
 | Product screenshots                            | `public/work/*.jpg`                                                           |
 
