@@ -1,5 +1,5 @@
 import { PrintButton } from '@/components/print-button';
-import { Container, ExternalLink, Placeholder } from '@/components/ui';
+import { Container, ExternalLink } from '@/components/ui';
 import { about, certifications, education, experience, skills } from '@/lib/portfolioData';
 import { pageMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site';
@@ -8,24 +8,19 @@ import { caseStudies } from '@/lib/work';
 export const metadata = pageMetadata({
   title: 'Resume',
   description:
-    'Resume of Amirul Ikmal: Technical Co-Founder at Certava, software engineer, AI and full-stack engineering since 2017.',
+    'Resume of Amirul Ikmal, a software engineer in Malaysia since 2017 and Technical Co-Founder of Certava.',
   path: '/resume',
 });
 
 export default function ResumePage() {
   return (
     <Container className="max-w-3xl py-12 sm:py-16 print:max-w-none print:py-0">
-      <div className="mb-8 flex flex-col gap-4 print:hidden">
-        {siteConfig.resumePdf ? (
+      <div className="mb-8 flex flex-wrap items-center gap-4 print:hidden">
+        {/* TODO(owner): add /public/resume.pdf and set siteConfig.resumePdf to show a download link. */}
+        {siteConfig.resumePdf && (
           <a href={siteConfig.resumePdf} className="text-accent underline">
             Download PDF
           </a>
-        ) : (
-          // TODO(owner): add /public/resume.pdf and set siteConfig.resumePdf.
-          <Placeholder
-            label="PDF resume"
-            hint="A downloadable PDF is coming. Use “Print / Save as PDF” below in the meantime."
-          />
         )}
         <PrintButton />
       </div>
@@ -33,7 +28,7 @@ export default function ResumePage() {
       <header className="border-b border-border pb-6">
         <h1 className="text-4xl font-semibold tracking-tight">{siteConfig.name}</h1>
         <p className="mt-1 text-sm text-muted">{siteConfig.legalName}</p>
-        <p className="mt-3 text-lg">Technical Co-Founder · Software Engineer · AI & full-stack</p>
+        <p className="mt-3 text-lg">Software engineer. Technical Co-Founder of Certava.</p>
         <p className="mt-2 text-sm text-muted">
           {about.location} · {about.availability} ·{' '}
           <a href={`mailto:${siteConfig.email}`} className="underline-offset-4 hover:underline">
@@ -58,7 +53,7 @@ export default function ResumePage() {
           {caseStudies.map((c) => (
             <li key={c.slug}>
               <p className="font-medium">
-                {c.name} — {c.tagline}{' '}
+                {c.name}: {c.tagline}{' '}
                 <span className="text-sm font-normal text-muted">
                   · <ExternalLink href={c.url}>{c.url.replace(/^https?:\/\//, '')}</ExternalLink>
                 </span>
@@ -108,7 +103,7 @@ export default function ResumePage() {
         <ul className="mt-3 space-y-2 text-sm">
           {education.map((e) => (
             <li key={e.school}>
-              <span className="font-medium">{e.school}</span> — {e.degree} ({e.date}
+              <span className="font-medium">{e.school}</span>, {e.degree} ({e.date}
               {e.grade && `, CGPA ${e.grade}`})
             </li>
           ))}
@@ -116,7 +111,7 @@ export default function ResumePage() {
         <ul className="mt-3 space-y-1 text-sm text-muted">
           {certifications.map((c) => (
             <li key={c.title}>
-              {c.title} — {c.issuer}, {c.date}
+              {c.title}, {c.issuer}, {c.date}
             </li>
           ))}
         </ul>

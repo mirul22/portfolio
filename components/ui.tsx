@@ -132,25 +132,6 @@ export function Card({ className, children }: { className?: string; children: Re
   return <div className={cn('rounded-2xl border border-border bg-surface p-6', className)}>{children}</div>;
 }
 
-/**
- * Visible slot for content the owner still has to provide. Renders publicly as an honest
- * placeholder; search the codebase for `TODO(owner)` to find every slot.
- */
-export function Placeholder({ label, hint, className }: { label: string; hint?: string; className?: string }) {
-  return (
-    <div
-      data-todo="owner"
-      className={cn('rounded-2xl border border-dashed border-border bg-surface/50 p-5 text-sm text-muted', className)}
-    >
-      <span className="mb-2 inline-block rounded border border-border px-1.5 py-0.5 font-mono text-[11px] tracking-wider uppercase">
-        Placeholder
-      </span>
-      <p className="font-medium text-fg">{label}</p>
-      {hint && <p className="mt-1">{hint}</p>}
-    </div>
-  );
-}
-
 export function PageHeader({
   eyebrow,
   title,
@@ -161,7 +142,7 @@ export function PageHeader({
   description?: ReactNode;
 }) {
   return (
-    <header className="relative border-b border-border glow">
+    <header className="border-b border-border">
       <Container className="pt-16 pb-12 sm:pt-24 sm:pb-16">
         {eyebrow && <p className="mb-4 font-mono text-xs tracking-widest text-accent uppercase">{eyebrow}</p>}
         <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl">{title}</h1>
