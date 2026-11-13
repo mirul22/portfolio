@@ -31,20 +31,27 @@ Optional env var: `NEXT_PUBLIC_SITE_URL` (defaults to `https://amirulikmal.com`)
 | Name, email, booking link, socials, resume PDF | `lib/site.ts`                                                                 |
 | Bio, services, experience, education, skills   | `lib/portfolioData.ts`                                                        |
 | Case studies (Certava, Kirabaki, KatalogKu)    | `lib/work.ts`                                                                 |
+| Testimonials                                   | `content/testimonials.ts`                                                     |
 | Writing posts                                  | `content/writing/posts.ts` (metadata) and `content/writing/<slug>.mdx` (body) |
 | Product screenshots                            | `public/work/*.jpg`                                                           |
 
-Content rule: only publish facts. Unknowns are marked `TODO(owner)` in code and render as visible "Placeholder" cards. Run `rg "TODO\(owner\)"` to list them all.
+Content rules:
+
+- Only publish facts. Nothing unconfirmed is rendered. Unknowns are tracked as `TODO(owner)` code comments only; run `rg "TODO\(owner\)"` to list them.
+- Empty data hides its UI. An empty `testimonials` array hides the testimonials section. Empty `results`, `next` or `myRole` arrays hide those case-study sections. A missing `timeline` hides the timeline fact.
+- Writing is hidden everywhere (nav, footer, home, sitemap, RSS link, llms.txt) until at least one post has `draft: false`. Draft posts have no route.
+- Testimonials must be exact quotes (for example from LinkedIn recommendations) with name, role, company and relationship. Never paraphrase.
+- Plain first-person copy. No em dashes and no marketing filler.
 
 ## Owner TODOs
 
-- [ ] Real metrics for Certava, Kirabaki and KatalogKu (`results[]` in `lib/work.ts`) and the home proof-strip "Sellers & users served" slot (`app/page.tsx`).
-- [ ] Real, attributable testimonials (`app/page.tsx` testimonials section).
+- [ ] Real metrics for Certava, Kirabaki and KatalogKu (`results` in `lib/work.ts`). The Results section appears once you add them.
+- [ ] Real LinkedIn recommendations in `content/testimonials.ts`.
 - [ ] PDF resume at `public/resume.pdf`, then set `resumePdf` in `lib/site.ts`.
-- [ ] Kirabaki: start date, tech stack, WhatsApp API provider, parsing approach, database, your role, roadmap.
-- [ ] KatalogKu: confirm solo build, roadmap, seller dashboard screenshots.
-- [ ] Certava: roadmap, in-app screenshots, align copy with certava.ai's current "ISO Intelligence Platform" positioning; confirm the decision rationale wording.
-- [ ] Confirm Vorto role is still current (`lib/portfolioData.ts`).
-- [ ] soskod.com returns 403 / a redirect loop to crawlers; fix the site or keep it unlinked.
+- [ ] Kirabaki: start date, tech stack, how messages are parsed, where records are stored, your role, roadmap.
+- [ ] KatalogKu: confirm solo build, roadmap.
+- [ ] Certava: roadmap; confirm the decision and trade-off wording.
+- [ ] Confirm the Vorto role is still current (`lib/portfolioData.ts`).
+- [ ] soskod.com returns 403 to crawlers; fix the site, then add `companyUrl` back.
 - [ ] FounderWorkflow: confirm your role and description.
-- [ ] Finish the two draft posts in `content/writing/` and set `draft: false`.
+- [ ] Finish the two draft posts in `content/writing/` and set `draft: false` to turn on the Writing section.
