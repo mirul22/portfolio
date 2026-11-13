@@ -1,5 +1,6 @@
 import { PrintButton } from '@/components/print-button';
 import { Container, ExternalLink } from '@/components/ui';
+import { clientStack, clientWork } from '@/content/client-work';
 import { about, certifications, education, experience, skills } from '@/lib/portfolioData';
 import { pageMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site';
@@ -84,6 +85,24 @@ export default function ResumePage() {
                   ))}
                 </ul>
               )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="r-clients" className="border-t border-border py-6">
+        <h2 id="r-clients" className="text-sm font-semibold tracking-widest text-accent uppercase">
+          Earlier client work
+        </h2>
+        <p className="mt-3 text-sm text-muted">Shipped with previous employers before Vorto.</p>
+        <ul className="mt-3 space-y-3">
+          {clientWork.map((c) => (
+            <li key={c.id} className="break-inside-avoid text-sm">
+              <p className="font-medium">
+                {c.name}
+                <span className="font-normal text-muted"> ({clientStack(c).join(', ')})</span>
+              </p>
+              <p className="text-muted">{c.projects.map((p) => p.name).join('; ')}</p>
             </li>
           ))}
         </ul>

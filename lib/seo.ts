@@ -55,7 +55,7 @@ export function personJsonLd() {
     email: `mailto:${siteConfig.email}`,
     jobTitle: ['Technical Co-Founder', 'Software Engineer'],
     description:
-      'Software engineer in Malaysia. Technical Co-Founder of Certava, an ISO compliance platform. Builds Kirabaki and KatalogKu for small sellers.',
+      'Software engineer in Malaysia. Technical Co-Founder of Certava, an ISO compliance platform. Builds Kirabaki and KatalogKu for small sellers. Before Vorto, built systems for SKMM, JHEV, MARA, Kraftangan and the Myanmar passport and visa system with previous employers.',
     address: { '@type': 'PostalAddress', addressCountry: 'MY' },
     worksFor: [
       { '@type': 'Organization', '@id': certavaId, name: 'Certava', url: 'https://certava.ai' },

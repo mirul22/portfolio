@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { FinalCta } from '@/components/cta';
+import { ClientWorkCompact } from '@/components/client-work';
 import { ExperienceTimeline } from '@/components/experience-timeline';
 import { ArrowRight, Calendar, FileText } from '@/components/icons';
 import { PostList } from '@/components/post-list';
@@ -19,9 +20,14 @@ export const metadata: Metadata = {
   alternates: { canonical: '/', types: rssAlternate },
 };
 
-// Only numbers that can be traced to lib/portfolioData.ts and lib/work.ts.
+// Only numbers that can be traced to lib/portfolioData.ts, lib/work.ts and content/client-work.ts.
 const proof = [
-  { value: '3', label: 'Products live', detail: 'Certava, Kirabaki and KatalogKu' },
+  // 17 client projects before Vorto (content/client-work.ts) + Certava, Kirabaki, KatalogKu + the Vorto platform = 21.
+  {
+    value: '20+',
+    label: 'Projects shipped, 3 of them my own',
+    detail: 'Government and corporate systems, plus Certava, Kirabaki and KatalogKu',
+  },
   // github.com/Amirul-Vorto contribution graph incl. private: 686 (2024, from ~June) + 1,050 (2025) + 423 (2026 to Nov) = 2,159.
   { value: '2,100+', label: 'Code contributions at Vorto since 2024', detail: 'From my work GitHub account' },
   { value: '2017', label: 'Writing software since', detail: 'First job: the VIBES system for JHEV' },
@@ -141,6 +147,24 @@ export default function HomePage() {
         <div className="max-w-3xl">
           <ExperienceTimeline items={experience.slice(0, 4)} showBullets={false} />
         </div>
+      </Section>
+
+      <Section
+        id="client-work"
+        eyebrow="Before Vorto"
+        title="Earlier client work"
+        description="Systems I built with previous employers for government agencies in Malaysia and Myanmar, and for a corporate travel client."
+        className="border-t border-border"
+        action={
+          <Link
+            href="/work#client-work"
+            className="inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+          >
+            Project details <ArrowRight className="size-4" />
+          </Link>
+        }
+      >
+        <ClientWorkCompact />
       </Section>
 
       {publishedPosts.length > 0 && (

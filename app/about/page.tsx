@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
+import { ClientWorkCompact } from '@/components/client-work';
 import { FinalCta } from '@/components/cta';
 import { ExperienceTimeline } from '@/components/experience-timeline';
 import { FileText } from '@/components/icons';
@@ -62,6 +64,17 @@ export default function AboutPage() {
       <Section id="experience" eyebrow="Experience" title="Where I have worked" className="border-t border-border">
         <div className="max-w-3xl">
           <ExperienceTimeline items={experience} />
+        </div>
+        <div id="client-work" className="mt-14 scroll-mt-24">
+          <h3 className="text-xl font-semibold tracking-tight">Earlier client work</h3>
+          <p className="mt-2 mb-6 max-w-2xl text-pretty text-muted">
+            Projects I shipped with previous employers before Vorto.{' '}
+            <Link href="/work#client-work" className="text-accent underline-offset-4 hover:underline">
+              Full list with scope
+            </Link>
+            .
+          </p>
+          <ClientWorkCompact headingLevel="h4" />
         </div>
       </Section>
 

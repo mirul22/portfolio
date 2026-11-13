@@ -1,3 +1,4 @@
+import { clientWork } from '@/content/client-work';
 import { publishedPosts } from '@/content/writing/posts';
 import { about, experience, services } from '@/lib/portfolioData';
 import { absoluteUrl, siteConfig } from '@/lib/site';
@@ -25,6 +26,16 @@ export function GET() {
     '## Recent roles',
     '',
     ...experience.slice(0, 3).map((e) => `- ${e.title}, ${e.company} (${e.date})`),
+    '',
+    '## Earlier client work (with previous employers, before Vorto)',
+    '',
+    ...clientWork.flatMap((c) =>
+      c.projects.map(
+        (p) =>
+          `- ${c.name}${c.description ? ` (${c.description})` : ''}: ${p.name}. ${p.scope}${p.duration ? ` ${p.duration}.` : ''} Stack: ${p.stack.join(', ')}.`
+      )
+    ),
+    `- Details: ${absoluteUrl('/work#client-work')}`,
     '',
     '## What I do',
     '',
