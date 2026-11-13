@@ -109,7 +109,7 @@ export function ExternalLink({
       )}
     >
       {children}
-      {showIcon && <ArrowUpRight className="size-3.5" />}
+      {showIcon && <ArrowUpRight className="size-3.5 print:hidden" />}
       <span className="sr-only"> (opens in a new tab)</span>
     </a>
   );

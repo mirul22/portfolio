@@ -34,18 +34,30 @@
 
 @page {
   size: A4;
-  margin: 14mm 16mm;
+  margin: 18mm;
 }
 
 @media print {
   html {
-    font-size: 13px;
+    font-size: 10.5pt;
+  }
+  html,
+  body {
+    height: auto !important;
+    min-height: 0 !important;
+    background: #fff !important;
   }
   body {
+    line-height: 1.4;
+    color: #18181b;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+  main {
+    flex: none !important;
+  }
   a {
+    color: inherit;
     text-decoration: none;
   }
   .reveal {
@@ -57,10 +69,124 @@
     --surface: #ffffff;
     --surface-2: #ffffff;
     --border: #d4d4d8;
-    --fg: #000000;
+    --fg: #18181b;
     --muted: #3f3f46;
     --accent: #065f46;
     color-scheme: light;
+  }
+
+  /* Print layout for /resume only. Screen styles are unchanged. */
+  .resume-sheet {
+    max-width: none;
+    padding: 0 !important;
+    color: #18181b;
+  }
+  .resume-sheet header {
+    margin: 0;
+    padding-bottom: 8pt;
+    border-bottom: 0.75pt solid #d4d4d8;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .resume-sheet h1 {
+    font-size: 22pt;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .resume-sheet .resume-legal {
+    margin-top: 2pt;
+    font-size: 9.5pt;
+    line-height: 1.3;
+    color: #3f3f46;
+  }
+  .resume-sheet .resume-title {
+    margin-top: 6pt;
+    font-size: 11.5pt;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #18181b;
+  }
+  .resume-sheet .resume-contact {
+    margin-top: 3pt;
+    font-size: 9.5pt;
+    line-height: 1.4;
+    color: #3f3f46;
+  }
+  .resume-sheet .resume-profiles {
+    display: block;
+    margin-top: 1pt;
+  }
+  .resume-sheet section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .resume-sheet h2 {
+    margin: 10pt 0 4pt;
+    padding-bottom: 2pt;
+    border-bottom: 0.6pt solid #e4e4e7;
+    font-size: 9pt;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #065f46;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .resume-sheet h2 + * {
+    margin-top: 0;
+  }
+  .resume-sheet .resume-summary {
+    font-size: 10.5pt;
+    line-height: 1.42;
+    color: #27272a;
+  }
+  .resume-sheet .resume-skill {
+    margin-top: 4pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .resume-sheet .resume-skill:first-child {
+    margin-top: 0;
+  }
+  .resume-sheet .resume-skill dt {
+    font-size: 10.5pt;
+    font-weight: 600;
+  }
+  .resume-sheet .resume-skill dd {
+    font-size: 10.5pt;
+    line-height: 1.38;
+    color: #3f3f46;
+  }
+  .resume-sheet .resume-entry {
+    margin-top: 6pt;
+    margin-bottom: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .resume-sheet .resume-entry:first-child {
+    margin-top: 0;
+  }
+  .resume-sheet .resume-date {
+    font-family: inherit;
+    font-size: 9.5pt;
+    line-height: 1.3;
+    white-space: nowrap;
+    color: #3f3f46;
+  }
+  .resume-sheet .resume-entry ul {
+    margin-top: 2pt;
+  }
+  .resume-sheet .resume-entry li {
+    margin-top: 1.5pt;
+    line-height: 1.38;
+  }
+  .resume-sheet p,
+  .resume-sheet li {
+    orphans: 3;
+    widows: 3;
   }
 }
 
