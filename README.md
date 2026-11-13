@@ -32,6 +32,7 @@ Optional env var: `NEXT_PUBLIC_SITE_URL` (defaults to `https://amirulikmal.com`)
 | Bio, services, experience, education, skills   | `lib/portfolioData.ts`                                                        |
 | Case studies (Certava, Kirabaki, KatalogKu)    | `lib/work.ts`                                                                 |
 | Testimonials                                   | `content/testimonials.ts`                                                     |
+| Earlier client work                            | `content/client-work.ts`                                                      |
 | Writing posts                                  | `content/writing/posts.ts` (metadata) and `content/writing/<slug>.mdx` (body) |
 | Product screenshots                            | `public/work/*.jpg`                                                           |
 
@@ -48,7 +49,7 @@ Content rules:
 - [ ] Real metrics for Certava, Kirabaki and KatalogKu (`results` in `lib/work.ts`). The Results section appears once you add them.
 - [ ] Real LinkedIn recommendations in `content/testimonials.ts`.
 - [ ] PDF resume at `public/resume.pdf`, then set `resumePdf` in `lib/site.ts`.
-- [ ] Kirabaki: start date, tech stack, how messages are parsed, where records are stored, your role, roadmap.
+- [ ] Kirabaki: start date, which LLM/provider does the parsing, where records are stored, your role, roadmap.
 - [ ] KatalogKu: confirm solo build, roadmap.
 - [ ] Certava: roadmap; confirm the decision and trade-off wording.
 - [ ] Confirm the Vorto role is still current (`lib/portfolioData.ts`).

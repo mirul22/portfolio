@@ -28,9 +28,9 @@ export interface CertificationItem {
   credentialId?: string;
 }
 
-export interface Skill {
-  name: string;
-  group: 'Languages' | 'Frameworks' | 'Data' | 'Platform & tools';
+export interface SkillGroup {
+  title: string;
+  items: string[];
 }
 
 export interface Service {
@@ -53,17 +53,17 @@ export const about = {
   currentlyExploring: 'AI agents, RAG and evaluation pipelines.',
   bio: [
     'I am a software engineer in Malaysia. I started in 2017 as a system programmer on the VIBES system for JHEV, and I have written production software every year since.',
-    'Today I am Technical Co-Founder of Certava, an ISO compliance platform, and a software engineer at Vorto, where I have shipped more than 70 features on a real-time logistics platform and work on AI workflow automation and LAM (Language-Action Models).',
-    'Outside of that I build two products for small sellers in Malaysia who already do business on WhatsApp. Kirabaki is a bot that records sales in Malay. KatalogKu is a free product catalog that sends orders to WhatsApp.',
-    'Most of my work is in Go, TypeScript and PHP. I spend a lot of time on backend services, and I care about reliability and getting the data right.',
+    'Today I am Technical Co-Founder of Certava, an AI platform for ISO compliance, and a software engineer at Vorto, where I have made more than 2,100 code contributions since 2024 on a real-time logistics platform and work on AI workflow automation and LAM (Language-Action Models).',
+    'Outside of that I build two products for small sellers in Malaysia who already do business on WhatsApp. Kirabaki is a WhatsApp bot that uses an LLM to record sales from Malay messages, receipt photos and voice notes. KatalogKu is a free product catalog that sends orders to WhatsApp.',
+    'Most of my work is in Go, TypeScript and PHP. I am strongest at designing AI workflows and backend services, and I care about reliability and getting the data right.',
   ],
 };
 
 export const services: Service[] = [
   {
-    title: 'AI workflows and LLM features',
+    title: 'AI and LLM products',
     description:
-      'At Vorto I work on AI workflow automation and LAM. At Certava I use Gemini and OpenAI for gap analysis, SOP drafts and risk registers, and turn the output into PDF and DOCX reports.',
+      'Certava uses Gemini and OpenAI for ISO gap analysis, SOP drafts and risk registers. Kirabaki uses an LLM to turn Malay WhatsApp messages, receipt photos and voice notes into sales records. At Vorto I work on AI workflow automation and LAM.',
   },
   {
     title: 'Full-stack web apps',
@@ -91,11 +91,6 @@ export const otherServices: Service[] = [
     title: 'Scripting & automation',
     description: 'Scripts, integrations, data pipelines and CLI tools for repetitive work.',
   },
-  {
-    title: 'FiveM & RedM development',
-    description:
-      'Server-side Lua and JS resources for FiveM (GTA V) and RedM (Red Dead Redemption 2) multiplayer servers.',
-  },
 ];
 
 export const experience: ExperienceItem[] = [
@@ -117,7 +112,7 @@ export const experience: ExperienceItem[] = [
     date: 'Jun 2024 – Present',
     type: 'Full-time',
     bullets: [
-      'Shipped 70+ production features on a real-time logistics SaaS platform.',
+      'Made 2,100+ code contributions since 2024 on a real-time logistics SaaS platform.',
       'Designed backend microservices to make the system more resilient and keep data consistent.',
       'Work on AI workflow automation and LAM.',
       'Work with other teams on continuous deployment.',
@@ -250,25 +245,34 @@ export const certifications: CertificationItem[] = [
   { title: 'The Web Developer Bootcamp', issuer: 'Udemy', date: 'May 2018', credentialId: 'UC-F6S1EQ4J' },
 ];
 
-export const skills: Skill[] = [
-  { name: 'Go', group: 'Languages' },
-  { name: 'TypeScript', group: 'Languages' },
-  { name: 'PHP', group: 'Languages' },
-  { name: 'Next.js', group: 'Frameworks' },
-  { name: 'React', group: 'Frameworks' },
-  { name: 'Node.js', group: 'Frameworks' },
-  { name: 'Laravel', group: 'Frameworks' },
-  { name: 'Tailwind CSS', group: 'Frameworks' },
-  { name: 'PostgreSQL', group: 'Data' },
-  { name: 'MongoDB', group: 'Data' },
-  { name: 'MySQL', group: 'Data' },
-  { name: 'Prisma', group: 'Data' },
-  { name: 'Firebase', group: 'Data' },
-  { name: 'Vercel', group: 'Platform & tools' },
-  { name: 'Cloudflare R2', group: 'Platform & tools' },
-  { name: 'Gemini & OpenAI APIs', group: 'Platform & tools' },
-  { name: 'Stripe', group: 'Platform & tools' },
-  { name: 'Vite', group: 'Platform & tools' },
-  { name: 'Figma', group: 'Platform & tools' },
-  { name: 'Postman', group: 'Platform & tools' },
+// Ordered by what I lead with. Only list things I have used in real work (see lib/work.ts and content/client-work.ts).
+export const skillGroups: SkillGroup[] = [
+  {
+    title: 'AI and LLM products',
+    items: [
+      'LLM app development with Gemini and OpenAI (Certava)',
+      'Agentic workflows and tool-calling (AI workflow automation and LAM at Vorto)',
+      'Document understanding and RAG for ISO compliance (Certava)',
+      'WhatsApp bots that read Malay text, receipt photos and voice notes (Kirabaki)',
+      'Prompt design and evals',
+      'Building with AI coding agents (Cursor, Claude)',
+    ],
+  },
+  {
+    title: 'Product engineering',
+    items: [
+      'TypeScript',
+      'Next.js and React',
+      'Node.js',
+      'Go',
+      'PHP and Laravel',
+      'C# and ASP.NET',
+      'Java',
+      'Mobile: React Native, Swift, Java (Android)',
+    ],
+  },
+  {
+    title: 'Platform and data',
+    items: ['Cloudflare R2', 'Vercel', 'PostgreSQL', 'MySQL', 'SQL Server', 'MongoDB', 'Stripe', 'CI/CD'],
+  },
 ];
