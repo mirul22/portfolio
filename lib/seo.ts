@@ -55,7 +55,7 @@ export function personJsonLd() {
     email: `mailto:${siteConfig.email}`,
     jobTitle: ['Technical Co-Founder', 'Software Engineer'],
     description:
-      'Software engineer in Malaysia who builds LLM products. Technical Co-Founder of Certava, an AI platform for ISO compliance. Builds Kirabaki, an LLM-driven WhatsApp bookkeeping bot, and KatalogKu for small sellers. Before Vorto, built systems for SKMM, JHEV, MARA, Kraftangan and the Myanmar passport and visa system with previous employers.',
+      'Software engineer in Malaysia who builds LLM products. Technical Co-Founder of Certava, an AI platform for ISO compliance (about RM100k in Cradle Fund funding). Builds Kirabaki, a WhatsApp bookkeeping bot in a pilot with KatalogKu sellers, and KatalogKu, used by 162 Malaysian sellers as of Nov 2026. Before Vorto, built systems for SKMM, JHEV, MARA, Kraftangan and the Myanmar passport and visa system with previous employers.',
     address: { '@type': 'PostalAddress', addressCountry: 'MY' },
     worksFor: [
       { '@type': 'Organization', '@id': certavaId, name: 'Certava', url: 'https://certava.ai' },
@@ -66,9 +66,8 @@ export function personJsonLd() {
       { '@type': 'CollegeOrUniversity', name: 'Universiti Teknologi MARA' },
     ],
     knowsAbout: [
-      'LLM application development',
-      'Agentic workflows and tool-calling',
-      'Document understanding for ISO compliance',
+      'Gemini and OpenAI clause mapping and gap reports',
+      'LLM parsing of Malay WhatsApp messages into sales entries',
       'WhatsApp bots',
       'TypeScript',
       'Next.js',

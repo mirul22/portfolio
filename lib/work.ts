@@ -39,6 +39,8 @@ export interface CaseStudy {
   decisions: Decision[];
   /** Real, verifiable metrics only. */
   results: { label: string; value: string }[];
+  /** One sourced sentence for cards, the resume and llms.txt. Omit when there is nothing verified. */
+  impact?: string;
   next: string[];
   screenshot: { src: string; alt: string; caption: string };
   audience: string;
@@ -54,7 +56,7 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       'Certava shows quality teams where they stand on ISO 9001, 14001 and 45001: which clauses, risks, controls and evidence are covered, weak or missing.',
     summary:
-      'Certava is an AI platform for ISO intelligence and compliance. It runs gap analysis against ISO standards, drafts SOPs, keeps a risk register and produces PDF and DOCX reports, using Google Gemini and OpenAI.',
+      'Certava is an AI platform for ISO intelligence and compliance. It runs gap analysis against ISO standards, drafts SOPs, keeps a risk register and produces PDF and DOCX reports, using Google Gemini and OpenAI. Secured about RM100k in Cradle Fund funding.',
     role: 'Technical Co-Founder',
     timeline: '2024 to now',
     status: 'Live',
@@ -112,8 +114,10 @@ export const caseStudies: CaseStudy[] = [
         tradeoff: 'Flexible for different standards and AI output. Cross-assessment reporting needs more care.',
       },
     ],
-    // TODO(owner): add real, verifiable results (customers, time saved per assessment, reports generated).
-    results: [],
+    // Cradle Fund figure is approved for public use. Do not add the "65% less time" marketing number.
+    // TODO(owner): other results (customers, reports generated) are still unknown.
+    impact: 'Secured about RM100k in Cradle Fund funding.',
+    results: [{ value: 'About RM100k', label: 'Cradle Fund funding' }],
     // TODO(owner): add what is next for Certava.
     next: [],
     screenshot: {
@@ -132,10 +136,10 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       'Small sellers record their sales and expenses by sending Kirabaki a WhatsApp message in Malay, like “masuk 120 kopi”. It saves the record and works out the day’s profit.',
     summary:
-      'Kirabaki is a WhatsApp bot that does simple bookkeeping in Malay for small sellers in Malaysia. Sellers type a message, snap a receipt or send a voice note, and an LLM turns it into a sale or expense record.',
+      'Kirabaki is a WhatsApp bot that does simple bookkeeping in Malay for small sellers in Malaysia. Sellers type a message, snap a receipt or send a voice note, and an LLM turns it into a sale or expense record. It is in a pilot with KatalogKu sellers.',
     role: 'Builder',
-    // TODO(owner): add start date (timeline), tech stack and your role details.
-    status: 'Live, free during the pilot',
+    // TODO(owner): add start date (timeline), which LLM/provider does the parsing, where records are stored, and your role details.
+    status: 'Pilot with KatalogKu sellers',
     category: 'WhatsApp bot',
     appCategory: 'FinanceApplication',
     stack: ['WhatsApp', 'LLM'],
@@ -172,7 +176,8 @@ export const caseStudies: CaseStudy[] = [
         tradeoff: 'It fits the people it is for. The market is smaller than an English-first product.',
       },
     ],
-    // TODO(owner): add real results (active sellers, sales recorded, weekly usage).
+    // No verified user or usage counts yet. Do not invent them. The pilot is with KatalogKu sellers.
+    impact: 'In a pilot with KatalogKu sellers.',
     results: [],
     // TODO(owner): add roadmap.
     next: [],
@@ -192,7 +197,7 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       'Sellers put their products on one free link, like katalogku.my/kedai-anda. Customers pick items and send the order straight to the seller on WhatsApp.',
     summary:
-      'KatalogKu is a free product catalog for small sellers in Malaysia. Each seller gets a shareable link for WhatsApp, Instagram and Facebook. Customers browse products and prices, then order over WhatsApp.',
+      'KatalogKu is a free product catalog for small sellers in Malaysia. Each seller gets a shareable link for WhatsApp, Instagram and Facebook. Customers browse products and prices, then order over WhatsApp. Used by 162 Malaysian sellers with 1,500+ products; 726 orders and RM18k+ in sales so far (Nov 2026).',
     role: 'Builder',
     timeline: '2025',
     status: 'Live',
@@ -241,9 +246,15 @@ export const caseStudies: CaseStudy[] = [
         tradeoff: 'Easy to share anywhere, but sellers have to promote their own link.',
       },
     ],
-    // TODO(owner): add real results (shops created, orders sent, products listed) and confirm whether it was a solo build.
-    results: [],
-    // TODO(owner): add roadmap.
+    // Counts from the live KatalogKu homepage database, 13 Nov 2026. "RM18k+" is completed sales.
+    // TODO(owner): confirm whether KatalogKu was a solo build, and add a roadmap.
+    impact: 'Used by 162 Malaysian sellers with 1,500+ products; 726 orders and RM18k+ in sales so far (Nov 2026).',
+    results: [
+      { value: '162', label: 'Registered sellers' },
+      { value: '1,500+', label: 'Products listed' },
+      { value: '726', label: 'Orders placed' },
+      { value: 'RM18k+', label: 'Completed sales, Nov 2026' },
+    ],
     next: [],
     screenshot: {
       src: '/work/katalogku.jpg',

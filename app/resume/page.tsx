@@ -1,3 +1,4 @@
+import { Download } from '@/components/icons';
 import { PrintButton } from '@/components/print-button';
 import { Container, ExternalLink } from '@/components/ui';
 import { clientStack, clientWork } from '@/content/client-work';
@@ -15,15 +16,21 @@ export const metadata = pageMetadata({
 
 export default function ResumePage() {
   return (
-    <Container className="max-w-3xl py-12 sm:py-16 print:max-w-none print:py-0">
-      <div className="mb-8 flex flex-wrap items-center gap-4 print:hidden">
-        {/* TODO(owner): add /public/resume.pdf and set siteConfig.resumePdf to show a download link. */}
-        {siteConfig.resumePdf && (
-          <a href={siteConfig.resumePdf} className="text-accent underline">
-            Download PDF
+    <Container className="max-w-3xl py-12 sm:py-16 print:max-w-none print:px-0 print:py-0">
+      <div className="mb-10 flex flex-col gap-4 rounded-2xl border border-border bg-surface p-5 sm:flex-row sm:items-center sm:justify-between print:hidden">
+        <p className="text-sm text-muted">The same resume as an A4 PDF.</p>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <a
+            href={siteConfig.resumePdf.href}
+            download={siteConfig.resumePdf.filename}
+            type="application/pdf"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-accent px-5 text-sm font-medium text-accent-fg transition-colors hover:bg-accent-strong motion-reduce:transition-none"
+          >
+            <Download className="size-4" />
+            Download resume (PDF)
           </a>
-        )}
-        <PrintButton />
+          <PrintButton />
+        </div>
       </div>
 
       <header className="border-b border-border pb-6">
@@ -35,7 +42,10 @@ export default function ResumePage() {
           <a href={`mailto:${siteConfig.email}`} className="underline-offset-4 hover:underline">
             {siteConfig.email}
           </a>{' '}
-          · amirulikmal.com
+          ·{' '}
+          <a href={siteConfig.url} className="underline-offset-4 hover:underline">
+            {siteConfig.url.replace(/^https?:\/\//, '')}
+          </a>
         </p>
       </header>
 
@@ -74,6 +84,7 @@ export default function ResumePage() {
                 </span>
               </p>
               <p className="text-sm text-muted">{c.outcome}</p>
+              {c.impact && <p className="text-sm text-muted">{c.impact}</p>}
             </li>
           ))}
         </ul>
@@ -89,6 +100,7 @@ export default function ResumePage() {
               <div className="flex flex-col sm:flex-row sm:justify-between sm:gap-4">
                 <p className="font-medium">
                   {e.title}, {e.company}
+                  {e.type ? ` (${e.type})` : ''}
                 </p>
                 <p className="shrink-0 font-mono text-sm text-muted">{e.date}</p>
               </div>

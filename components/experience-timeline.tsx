@@ -21,7 +21,9 @@ export function ExperienceTimeline({ items, showBullets = true }: { items: Exper
             </h3>
             <p className="shrink-0 font-mono text-sm text-muted">{item.date}</p>
           </div>
-          {item.place && <p className="mt-1 text-sm text-muted">{item.place}</p>}
+          {(item.type || item.place) && (
+            <p className="mt-1 text-sm text-muted">{[item.type, item.place].filter(Boolean).join(' · ')}</p>
+          )}
           {showBullets && item.bullets && (
             <ul className="mt-3 list-disc space-y-1.5 pl-5 text-muted marker:text-border">
               {item.bullets.map((b) => (

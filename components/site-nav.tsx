@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
   ...(publishedPosts.length > 0 ? [{ href: '/writing', label: 'Writing' }] : []),
+  { href: '/resume', label: 'Resume' },
   { href: '/contact', label: 'Contact' },
 ];
 

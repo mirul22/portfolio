@@ -29,9 +29,6 @@ export default function AboutPage() {
           {about.bio.map((p) => (
             <p key={p}>{p}</p>
           ))}
-          <p>
-            <span className="font-medium text-fg">What I am learning now:</span> {about.currentlyExploring}
-          </p>
           <div className="flex flex-col gap-3 pt-2 sm:flex-row">
             <ButtonLink href="/resume">
               <FileText className="size-4" />

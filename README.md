@@ -20,21 +20,22 @@ npm run dev      # http://localhost:3000
 npm run build && npm start
 npm run lint
 npm run typecheck
+npm run resume:pdf   # after `npm start`: rewrites public/amirul-ikmal-resume.pdf from /resume
 ```
 
 Optional env var: `NEXT_PUBLIC_SITE_URL` (defaults to `https://amirulikmal.com`). Set it to the host Vercel serves as primary so canonical URLs, the sitemap and OG URLs match.
 
 ## Editing content
 
-| What                                           | Where                                                                         |
-| ---------------------------------------------- | ----------------------------------------------------------------------------- |
-| Name, email, booking link, socials, resume PDF | `lib/site.ts`                                                                 |
-| Bio, services, experience, education, skills   | `lib/portfolioData.ts`                                                        |
-| Case studies (Certava, Kirabaki, KatalogKu)    | `lib/work.ts`                                                                 |
-| Testimonials                                   | `content/testimonials.ts`                                                     |
-| Earlier client work                            | `content/client-work.ts`                                                      |
-| Writing posts                                  | `content/writing/posts.ts` (metadata) and `content/writing/<slug>.mdx` (body) |
-| Product screenshots                            | `public/work/*.jpg`                                                           |
+| What                                         | Where                                                                         |
+| -------------------------------------------- | ----------------------------------------------------------------------------- |
+| Name, email, booking link, socials           | `lib/site.ts`                                                                 |
+| Bio, services, experience, education, skills | `lib/portfolioData.ts`                                                        |
+| Case studies (Certava, Kirabaki, KatalogKu)  | `lib/work.ts`                                                                 |
+| Testimonials                                 | `content/testimonials.ts`                                                     |
+| Earlier client work                          | `content/client-work.ts`                                                      |
+| Writing posts                                | `content/writing/posts.ts` (metadata) and `content/writing/<slug>.mdx` (body) |
+| Product screenshots                          | `public/work/*.jpg`                                                           |
 
 Content rules:
 
@@ -46,9 +47,8 @@ Content rules:
 
 ## Owner TODOs
 
-- [ ] Real metrics for Certava, Kirabaki and KatalogKu (`results` in `lib/work.ts`). The Results section appears once you add them.
+- [ ] Further metrics: Certava customers or reports generated (funding is already recorded; do not add the "65% less time" figure). Kirabaki usage counts (none verified; it is in a pilot with KatalogKu sellers). KatalogKu counts are from the live homepage database on 13 Nov 2026.
 - [ ] Real LinkedIn recommendations in `content/testimonials.ts`.
-- [ ] PDF resume at `public/resume.pdf`, then set `resumePdf` in `lib/site.ts`.
 - [ ] Kirabaki: start date, which LLM/provider does the parsing, where records are stored, your role, roadmap.
 - [ ] KatalogKu: confirm solo build, roadmap.
 - [ ] Certava: roadmap; confirm the decision and trade-off wording.

@@ -32,7 +32,25 @@
   color-scheme: dark;
 }
 
+@page {
+  size: A4;
+  margin: 14mm 16mm;
+}
+
 @media print {
+  html {
+    font-size: 13px;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a {
+    text-decoration: none;
+  }
+  .reveal {
+    animation: none !important;
+  }
   :root,
   .dark {
     --bg: #ffffff;

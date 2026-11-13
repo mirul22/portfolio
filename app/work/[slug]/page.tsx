@@ -109,7 +109,7 @@ function buildSections(study: CaseStudy): { id: string; title: string; body: Rea
       id: 'results',
       title: 'Results',
       body: study.results.length ? (
-        <ul className="grid gap-4 sm:grid-cols-3">
+        <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {study.results.map((r) => (
             <li key={r.label} className="rounded-2xl border border-border bg-surface p-5">
               <p className="text-3xl font-semibold text-accent">{r.value}</p>
@@ -175,6 +175,7 @@ export default async function CaseStudyPage({ params }: Props) {
           <p className="font-mono text-xs tracking-widest text-accent uppercase">{study.tagline}</p>
           <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance sm:text-6xl">{study.name}</h1>
           <p className="mt-5 max-w-3xl text-xl text-pretty sm:text-2xl">{study.outcome}</p>
+          {study.impact && <p className="mt-3 max-w-3xl text-lg text-pretty text-muted">{study.impact}</p>}
 
           <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
             {facts.map((f) => (

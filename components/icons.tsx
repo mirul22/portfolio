@@ -41,6 +41,12 @@ export const ArrowDown = (p: IconProps) => (
   </Base>
 );
 
+export const Download = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 3v12M7 10l5 5 5-5M5 21h14" />
+  </Base>
+);
+
 export const Sun = (p: IconProps) => (
   <Base {...p}>
     <circle cx="12" cy="12" r="4" />

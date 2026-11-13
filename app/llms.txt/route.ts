@@ -20,7 +20,7 @@ export function GET() {
     '',
     ...caseStudies.map(
       (c) =>
-        `- [${c.name}](${absoluteUrl(`/work/${c.slug}`)}): ${c.tagline}. ${c.outcome} Role: ${c.role}. Website: ${c.url}`
+        `- [${c.name}](${absoluteUrl(`/work/${c.slug}`)}): ${c.tagline}. ${c.outcome}${c.impact ? ` ${c.impact}` : ''} Role: ${c.role}. Website: ${c.url}`
     ),
     '',
     '## Recent roles',
