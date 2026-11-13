@@ -4,10 +4,9 @@ export const siteConfig = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://amirulikmal.com').replace(/\/$/, ''),
   name: 'Amirul Ikmal',
   legalName: 'Muhammad Amirul Ikmal Bin Mohd Ridzwan',
-  title: 'Amirul Ikmal — AI products, full-stack engineering',
-  tagline: 'I build AI products that ship.',
+  title: 'Amirul Ikmal, software engineer in Malaysia',
   description:
-    'Amirul Ikmal is a software engineer in Malaysia and Technical Co-Founder of Certava, an AI compliance platform. He builds Kirabaki and KatalogKu for Malaysian small sellers.',
+    'I am Amirul Ikmal, a software engineer in Malaysia. I co-founded Certava, an ISO compliance platform, work at Vorto, and build Kirabaki and KatalogKu for small sellers.',
   locale: 'en',
   country: 'Malaysia',
   email: 'amirulikmal.biz@gmail.com',

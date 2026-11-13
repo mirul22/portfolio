@@ -8,7 +8,7 @@ import { absoluteUrl } from '@/lib/site';
 import { caseStudies } from '@/lib/work';
 
 const description =
-  'Case studies of products Amirul Ikmal has built: Certava (AI compliance SaaS), Kirabaki (Malay WhatsApp bookkeeping bot) and KatalogKu (WhatsApp catalog for small sellers).';
+  'Case studies for Certava, an ISO compliance platform I co-founded, and Kirabaki and KatalogKu, two WhatsApp tools I build for small sellers in Malaysia.';
 
 export const metadata = pageMetadata({ title: 'Work', description, path: '/work' });
 
@@ -17,14 +17,14 @@ export default function WorkPage() {
     <>
       <PageHeader
         eyebrow="Work"
-        title="Products, not just projects."
-        description="Three live products across AI SaaS and WhatsApp automation. Each case study covers the problem, constraints, architecture and trade-offs."
+        title="Products I work on"
+        description="For each one: what it does, who uses it, how it is built and the trade-offs behind it."
       />
       <Container className="py-16 sm:py-20">
         <h2 className="sr-only">Case studies</h2>
         <div className="grid gap-5 md:grid-cols-3 md:grid-rows-2">
           {caseStudies.map((study, i) => (
-            <WorkCard key={study.slug} study={study} size={i === 0 ? 'lg' : 'md'} eager={i === 0} />
+            <WorkCard key={study.slug} study={study} size={i === 0 ? 'lg' : 'md'} eager={i === 0} showOutcome />
           ))}
         </div>
 

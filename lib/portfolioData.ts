@@ -49,36 +49,35 @@ export interface SideProject {
 export const about = {
   name: 'Amirul Ikmal',
   location: 'Malaysia',
-  availability: 'Open to full-time & contract • Remote',
-  currentlyExploring: 'AI agents, RAG, and evaluation pipelines.',
+  availability: 'Open to full-time and contract work, remote',
+  currentlyExploring: 'AI agents, RAG and evaluation pipelines.',
   bio: [
-    'I build AI-powered systems and scalable software. At Vorto I ship production AI workflow automation and LAM (Language-Action Models), and have delivered 70+ features for a real-time logistics SaaS platform.',
-    'As Technical Co-Founder of Certava, I lead engineering on an AI compliance platform. On the side I build products for Malaysian small sellers: Kirabaki, a Malay-language WhatsApp bot for recording sales, and KatalogKu, a free product catalog that turns into WhatsApp orders.',
-    'My strengths: designing and implementing AI workflows, architecting resilient backend services (Go, Node), and partnering with cross-functional teams for continuous deployment. I care deeply about system reliability and data integrity.',
-    'I have been shipping software professionally since 2017, across Go, TypeScript/React, Next.js, PHP and modern tooling. I keep pushing into AI and automation because that is where the biggest impact is.',
+    'I am a software engineer in Malaysia. I started in 2017 as a system programmer on the VIBES system for JHEV, and I have written production software every year since.',
+    'Today I am Technical Co-Founder of Certava, an ISO compliance platform, and a software engineer at Vorto, where I have shipped more than 70 features on a real-time logistics platform and work on AI workflow automation and LAM (Language-Action Models).',
+    'Outside of that I build two products for small sellers in Malaysia who already do business on WhatsApp. Kirabaki is a bot that records sales in Malay. KatalogKu is a free product catalog that sends orders to WhatsApp.',
+    'Most of my work is in Go, TypeScript and PHP. I spend a lot of time on backend services, and I care about reliability and getting the data right.',
   ],
 };
 
 export const services: Service[] = [
   {
-    title: 'AI agents & LLM apps',
+    title: 'AI workflows and LLM features',
     description:
-      'Production AI workflows, agents, RAG and document pipelines using Gemini, OpenAI and Language-Action Models, from proof of concept to monitored production.',
+      'At Vorto I work on AI workflow automation and LAM. At Certava I use Gemini and OpenAI for gap analysis, SOP drafts and risk registers, and turn the output into PDF and DOCX reports.',
   },
   {
-    title: 'Full-stack product engineering',
+    title: 'Full-stack web apps',
     description:
-      'End-to-end SaaS: Next.js and React front ends, Go and Node backends, MongoDB/PostgreSQL, auth, billing with Stripe, and the boring reliability work that keeps it up.',
+      'Next.js and React on the front, Go or Node on the back, MongoDB or PostgreSQL for data. I also do the parts around it: auth, Stripe billing, email reports.',
   },
   {
-    title: 'Cloud on Vercel & Cloudflare',
-    description:
-      'Fast, cheap-to-run deployments on Vercel and Cloudflare (R2 object storage), with CI/CD, security headers and performance budgets baked in.',
+    title: 'Hosting on Vercel and Cloudflare',
+    description: 'KatalogKu runs on Vercel with product photos in Cloudflare R2. This site is fully static on Vercel.',
   },
   {
-    title: 'WhatsApp automation for SMEs',
+    title: 'WhatsApp tools for small sellers',
     description:
-      'WhatsApp-first tools for Malaysian small businesses, where customers already are: catalog-to-order flows and Malay-language bookkeeping bots.',
+      'KatalogKu sends customer orders to the seller on WhatsApp. Kirabaki lets sellers record sales by texting a bot in Malay.',
   },
 ];
 
@@ -86,16 +85,16 @@ export const services: Service[] = [
 export const otherServices: Service[] = [
   {
     title: 'Custom websites & web apps',
-    description: 'Landing pages to full-stack web applications on modern stacks (React, Next.js, Go).',
+    description: 'Landing pages and full web apps in React, Next.js and Go.',
   },
   {
     title: 'Scripting & automation',
-    description: 'Automation, integrations, data pipelines and CLI tools tailored to a workflow.',
+    description: 'Scripts, integrations, data pipelines and CLI tools for repetitive work.',
   },
   {
     title: 'FiveM & RedM development',
     description:
-      'Custom resources and server-side Lua/JS systems for FiveM (GTA V) and RedM (Red Dead Redemption 2) multiplayer servers.',
+      'Server-side Lua and JS resources for FiveM (GTA V) and RedM (Red Dead Redemption 2) multiplayer servers.',
   },
 ];
 
@@ -106,8 +105,8 @@ export const experience: ExperienceItem[] = [
     companyUrl: 'https://certava.ai',
     date: '2024 – Present',
     bullets: [
-      'Co-founded and lead engineering for an AI compliance and gap-analysis SaaS.',
-      'Built AI workflows on Google Gemini and OpenAI for gap analysis, SOP generation and risk registers, plus PDF/DOCX reporting and Stripe billing.',
+      'Co-founded an ISO compliance and gap analysis platform. I handle the engineering.',
+      'Built the Gemini and OpenAI workflows for gap analysis, SOP drafts and risk registers, plus PDF and DOCX reports and Stripe billing.',
     ],
   },
   {
@@ -118,10 +117,10 @@ export const experience: ExperienceItem[] = [
     date: 'Jun 2024 – Present',
     type: 'Full-time',
     bullets: [
-      'Spearheaded delivery of 70+ production features for a real-time logistics SaaS platform.',
-      'Architected scalable backend microservices improving system resilience and data integrity.',
-      'Work on building AI workflow automation and LAM.',
-      'Partnered with cross-functional teams for continuous deployments.',
+      'Shipped 70+ production features on a real-time logistics SaaS platform.',
+      'Designed backend microservices to make the system more resilient and keep data consistent.',
+      'Work on AI workflow automation and LAM.',
+      'Work with other teams on continuous deployment.',
     ],
   },
   {
@@ -131,8 +130,8 @@ export const experience: ExperienceItem[] = [
     place: 'Kuala Lumpur, Malaysia',
     date: 'Jan 2022 – Present',
     bullets: [
-      'Delivering web and mobile solutions for clients across Go, React, and Node.js.',
-      'Leading technical scope and architecture for consultancy projects.',
+      'Build web and mobile apps for clients in Go, React and Node.js.',
+      'Scope and design the architecture for consulting projects.',
     ],
   },
   {
@@ -143,7 +142,7 @@ export const experience: ExperienceItem[] = [
     type: 'Full-time',
     bullets: [
       'Shipped production features for network and software products.',
-      'Collaborated with cross-functional teams on design and delivery.',
+      'Worked with other teams on design and delivery.',
     ],
   },
   {
@@ -154,7 +153,7 @@ export const experience: ExperienceItem[] = [
     type: 'Full-time',
     bullets: [
       'Completed: Portal Kempen Tabung Pahlawan, Portal Pengemaskinian Maklumat Veteran, Usahawan JHEV mobile apps.',
-      'Managed a team developing an online shopping platform (Mycraftshoppe – web portal and mobile apps).',
+      'Led the team building Mycraftshoppe, an online shopping platform (web portal and mobile apps).',
       'Worked on new technology for the revamp of Veteran Integrated Benefits (VIBES) at JHEV.',
     ],
   },
@@ -164,10 +163,7 @@ export const experience: ExperienceItem[] = [
     place: 'Shah Alam, Selangor',
     date: 'Dec 2018 – Jul 2019',
     type: 'Full-time',
-    bullets: [
-      'Developed and maintained software solutions for client projects.',
-      'Worked with web and backend technologies in an agile setup.',
-    ],
+    bullets: ['Built and maintained software for client projects.', 'Web and backend work in an agile team.'],
   },
   {
     title: 'Analyst Programmer',
@@ -175,10 +171,7 @@ export const experience: ExperienceItem[] = [
     place: 'Petaling Jaya',
     date: 'Jun 2018 – Nov 2018',
     type: 'Full-time',
-    bullets: [
-      'Contributed to analysis and development of in-house software.',
-      'Supported delivery and documentation for business systems.',
-    ],
+    bullets: ['Analysis and development of in-house software.', 'Delivery and documentation for business systems.'],
   },
   {
     title: 'System Programmer',
@@ -194,15 +187,13 @@ export const sideProjects: SideProject[] = [
   {
     // TODO(owner): confirm your role on FounderWorkflow and update the description to match the live site.
     title: 'FounderWorkflow',
-    description:
-      'Workflow and productivity platform for founders and small teams. Helps structure tasks, roles, and processes.',
+    description: 'A workflow tool for founders and small teams to organise tasks, roles and processes.',
     technologies: ['Next.js', 'React', 'TypeScript'],
     href: 'https://founderworkflow.com',
   },
   {
     title: 'amirulikmal.com',
-    description:
-      'This site. Statically generated Next.js App Router, MDX writing, dynamic OG images, JSON-LD and llms.txt.',
+    description: 'This site. Static Next.js App Router pages, generated OG images, JSON-LD and llms.txt.',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'MDX'],
     href: 'https://github.com/mirul22/portfolio',
     year: '2026',

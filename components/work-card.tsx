@@ -11,11 +11,13 @@ export function WorkCard({
   size = 'md',
   headingLevel = 'h3',
   eager = false,
+  showOutcome,
 }: {
   study: CaseStudy;
   size?: 'lg' | 'md';
   headingLevel?: 'h2' | 'h3';
   eager?: boolean;
+  showOutcome?: boolean;
 }) {
   const Heading = headingLevel;
   const large = size === 'lg';
@@ -34,10 +36,10 @@ export function WorkCard({
         <Heading className={cn('font-semibold tracking-tight', large ? 'text-3xl sm:text-4xl' : 'text-2xl')}>
           <Link href={`/work/${study.slug}`} className="after:absolute after:inset-0 focus-visible:outline-none">
             {study.name}
-            <span className="text-muted"> — {study.tagline}</span>
           </Link>
         </Heading>
-        <p className={cn('text-pretty text-muted', large && 'text-lg')}>{study.outcome}</p>
+        <p className={cn('font-medium text-pretty', large ? 'text-lg' : 'text-base')}>{study.tagline}</p>
+        {(showOutcome ?? large) && <p className={cn('text-pretty text-muted', large && 'text-lg')}>{study.outcome}</p>}
         <p className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-accent">
           Read case study
           <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none" />

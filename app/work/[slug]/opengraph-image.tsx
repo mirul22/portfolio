@@ -13,7 +13,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const { slug } = await params;
   const study = getCaseStudy(slug);
   return renderOg({
-    eyebrow: `Case study · ${study?.role ?? ''}`,
+    eyebrow: 'Case study',
     title: study ? `${study.name}: ${study.tagline}` : 'Case study',
     subtitle: study?.outcome,
   });

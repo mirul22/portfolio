@@ -6,7 +6,7 @@ import { siteConfig } from '@/lib/site';
 
 export const metadata = pageMetadata({
   title: 'Contact',
-  description: 'Contact Amirul Ikmal by email or book a 30-minute call. Open to full-time and contract roles, remote.',
+  description: 'Email Amirul Ikmal or book a 30-minute call. Open to full-time and contract work, remote.',
   path: '/contact',
 });
 
@@ -15,7 +15,7 @@ const [github, linkedin] = siteConfig.socials;
 const channels = [
   {
     title: 'Book a call',
-    description: '30 minutes on Calendly. Best for roles, contracts and product ideas.',
+    description: '30 minutes on Calendly, for a role, a contract or a product idea.',
     href: siteConfig.bookingUrl,
     cta: 'Pick a time',
     icon: Calendar,
@@ -60,8 +60,8 @@ export default function ContactPage() {
     <>
       <PageHeader
         eyebrow="Contact"
-        title="Let’s build something that ships."
-        description={`${about.availability}. Based in ${about.location}. I reply to every genuine message.`}
+        title="Get in touch"
+        description={`${about.availability}. I am based in ${about.location}. Email is the quickest way to reach me.`}
       />
       <Container className="py-16 sm:py-20">
         <h2 className="sr-only">Ways to reach me</h2>

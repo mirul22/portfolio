@@ -13,10 +13,8 @@ export default function NotFound() {
   return (
     <Container className="flex min-h-[60vh] flex-col justify-center py-20">
       <p className="font-mono text-sm text-accent">404</p>
-      <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">This page didn’t ship.</h1>
-      <p className="mt-4 max-w-xl text-lg text-muted">
-        The link may be old or mistyped. Here are some places that do exist:
-      </p>
+      <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Page not found</h1>
+      <p className="mt-4 max-w-xl text-lg text-muted">That link does not go anywhere. Try one of these instead:</p>
       <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
         {caseStudies.map((c) => (
           <li key={c.slug}>
@@ -26,8 +24,8 @@ export default function NotFound() {
           </li>
         ))}
         <li>
-          <Link href="/writing" className="inline-flex min-h-11 items-center text-accent hover:underline">
-            Writing
+          <Link href="/about" className="inline-flex min-h-11 items-center text-accent hover:underline">
+            About me
           </Link>
         </li>
       </ul>

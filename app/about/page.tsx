@@ -12,7 +12,7 @@ import { siteConfig } from '@/lib/site';
 export const metadata = pageMetadata({
   title: 'About',
   description:
-    'About Amirul Ikmal: software engineer in Malaysia since 2017, Technical Co-Founder of Certava, builder of Kirabaki and KatalogKu. Experience, skills, education and certifications.',
+    'About Amirul Ikmal: software engineer in Malaysia since 2017, Technical Co-Founder of Certava, builder of Kirabaki and KatalogKu. Work history, skills and education.',
   path: '/about',
   type: 'profile',
 });
@@ -22,7 +22,7 @@ const skillGroups = ['Languages', 'Frameworks', 'Data', 'Platform & tools'] as c
 export default function AboutPage() {
   return (
     <>
-      <PageHeader eyebrow="About" title="Engineer, co-founder, builder for small businesses." />
+      <PageHeader eyebrow="About" title="About me" />
 
       <Container className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[1fr_20rem]">
         <div className="space-y-5 text-lg text-pretty text-muted">
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <p key={p}>{p}</p>
           ))}
           <p>
-            <span className="font-medium text-fg">Currently exploring:</span> {about.currentlyExploring}
+            <span className="font-medium text-fg">What I am learning now:</span> {about.currentlyExploring}
           </p>
           <div className="flex flex-col gap-3 pt-2 sm:flex-row">
             <ButtonLink href="/resume">
@@ -65,7 +65,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section id="skills" eyebrow="Skills" title="Tools I reach for" className="border-t border-border">
+      <Section id="skills" eyebrow="Skills" title="What I use" className="border-t border-border">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {skillGroups.map((group) => (
             <Card key={group}>
@@ -87,8 +87,8 @@ export default function AboutPage() {
       <Section
         id="also"
         eyebrow="Also"
-        title="Other things I build"
-        description="Earlier and niche work I still take on when it is a good fit."
+        title="Other work I take on"
+        description="Smaller jobs I still do for clients."
         className="border-t border-border"
       >
         <ul className="grid gap-5 md:grid-cols-3">
@@ -103,7 +103,12 @@ export default function AboutPage() {
         </ul>
       </Section>
 
-      <Section id="education" eyebrow="Education" title="Education & certifications" className="border-t border-border">
+      <Section
+        id="education"
+        eyebrow="Education"
+        title="Education and certifications"
+        className="border-t border-border"
+      >
         <div className="grid gap-10 lg:grid-cols-2">
           <ul className="space-y-5">
             {education.map((e) => (
@@ -136,7 +141,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <FinalCta title="Want to work together?" />
+      <FinalCta />
       <JsonLd
         data={graph(
           breadcrumbJsonLd([

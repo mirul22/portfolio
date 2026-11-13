@@ -131,22 +131,6 @@
   }
 }
 
-@utility glow {
-  background-image: radial-gradient(
-    60% 50% at 50% 0%,
-    color-mix(in oklab, var(--accent) 14%, transparent),
-    transparent 70%
-  );
-}
-
-@utility grid-bg {
-  background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--border) 60%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--border) 60%, transparent) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
-}
-
 /* Scroll-linked reveal: progressive enhancement, disabled for reduced motion and unsupported browsers. */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
