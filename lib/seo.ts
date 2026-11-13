@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
 
+import { publishedPosts } from '@/content/writing/posts';
+
 import { absoluteUrl, siteConfig } from './site';
 import type { CaseStudy } from './work';
 
-export const rssAlternate = {
-  'application/rss+xml': [{ url: '/writing/rss.xml', title: `${siteConfig.name} — Writing` }],
-};
+export const rssAlternate =
+  publishedPosts.length > 0
+    ? { 'application/rss+xml': [{ url: '/writing/rss.xml', title: `${siteConfig.name}: writing` }] }
+    : undefined;
 
 export function pageMetadata({
   title,
@@ -51,7 +54,8 @@ export function personJsonLd() {
     image: absoluteUrl('/images/me.jpg'),
     email: `mailto:${siteConfig.email}`,
     jobTitle: ['Technical Co-Founder', 'Software Engineer'],
-    description: siteConfig.description,
+    description:
+      'Software engineer in Malaysia. Technical Co-Founder of Certava, an ISO compliance platform. Builds Kirabaki and KatalogKu for small sellers.',
     address: { '@type': 'PostalAddress', addressCountry: 'MY' },
     worksFor: [
       { '@type': 'Organization', '@id': certavaId, name: 'Certava', url: 'https://certava.ai' },

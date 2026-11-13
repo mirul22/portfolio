@@ -3,7 +3,6 @@ import Link from 'next/link';
 import type { PostMeta } from '@/content/writing/posts';
 
 import { ArrowRight } from './icons';
-import { Badge } from './ui';
 
 export function formatDate(iso: string) {
   return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB', {
@@ -22,7 +21,6 @@ export function PostList({ posts, headingLevel = 'h3' }: { posts: PostMeta[]; he
         <li key={post.slug} className="group relative p-6 transition-colors hover:bg-surface-2 sm:p-8">
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
             <time dateTime={post.date}>{formatDate(post.date)}</time>
-            {post.draft && <Badge>Draft outline</Badge>}
           </div>
           <Heading className="mt-2 text-xl font-semibold tracking-tight">
             <Link href={`/writing/${post.slug}`} className="after:absolute after:inset-0">

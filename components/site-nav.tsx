@@ -4,15 +4,17 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useState } from 'react';
 
+import { publishedPosts } from '@/content/writing/posts';
+
 import { Close, Menu } from './icons';
 import { cn } from './ui';
 
-export const NAV_ITEMS = [
+const NAV_ITEMS = [
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
-  { href: '/writing', label: 'Writing' },
+  ...(publishedPosts.length > 0 ? [{ href: '/writing', label: 'Writing' }] : []),
   { href: '/contact', label: 'Contact' },
-] as const;
+];
 
 function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -69,7 +71,7 @@ export function SiteNav() {
         id={menuId}
         aria-label="Mobile"
         hidden={!open}
-        className="absolute inset-x-0 top-full border-b border-border bg-bg/95 backdrop-blur md:hidden"
+        className="absolute inset-x-0 top-full border-b border-border bg-bg md:hidden"
       >
         <ul className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8">
           {NAV_ITEMS.map((item) => {

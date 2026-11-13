@@ -25,9 +25,9 @@ ${post.tags.map((t) => `      <category>${escapeXml(t)}</category>`).join('\n')}
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${escapeXml(`${siteConfig.name} — Writing`)}</title>
+    <title>${escapeXml(`${siteConfig.name}: writing`)}</title>
     <link>${absoluteUrl('/writing')}</link>
-    <description>${escapeXml('Notes on building AI products, WhatsApp automation and SaaS.')}</description>
+    <description>${escapeXml('Posts about building Certava, Kirabaki and KatalogKu.')}</description>
     <language>en</language>
     <atom:link href="${absoluteUrl('/writing/rss.xml')}" rel="self" type="application/rss+xml" />
 ${items}

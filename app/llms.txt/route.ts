@@ -19,10 +19,10 @@ export function GET() {
     '',
     ...caseStudies.map(
       (c) =>
-        `- [${c.name}](${absoluteUrl(`/work/${c.slug}`)}): ${c.tagline}. ${c.outcome} Role: ${c.role}. Live: ${c.url}`
+        `- [${c.name}](${absoluteUrl(`/work/${c.slug}`)}): ${c.tagline}. ${c.outcome} Role: ${c.role}. Website: ${c.url}`
     ),
     '',
-    '## Current roles',
+    '## Recent roles',
     '',
     ...experience.slice(0, 3).map((e) => `- ${e.title}, ${e.company} (${e.date})`),
     '',
@@ -35,7 +35,9 @@ export function GET() {
     `- [Work](${absoluteUrl('/work')}): case studies`,
     `- [About](${absoluteUrl('/about')}): bio, full experience, skills, education`,
     `- [Resume](${absoluteUrl('/resume')}): printable resume`,
-    `- [Writing](${absoluteUrl('/writing')}): articles (RSS: ${absoluteUrl('/writing/rss.xml')})`,
+    ...(publishedPosts.length
+      ? [`- [Writing](${absoluteUrl('/writing')}): posts (RSS: ${absoluteUrl('/writing/rss.xml')})`]
+      : []),
     `- [Contact](${absoluteUrl('/contact')})`,
     ...(publishedPosts.length
       ? [

@@ -5,7 +5,7 @@ export interface PostMeta {
   /** ISO date (YYYY-MM-DD). */
   date: string;
   tags: string[];
-  /** Drafts are listed on /writing but kept out of the sitemap and RSS feed, and marked noindex. */
+  /** Drafts are not rendered anywhere: no page, no listing, no sitemap or RSS entry. */
   draft: boolean;
 }
 
@@ -31,8 +31,8 @@ export const posts: PostMeta[] = [
   },
 ];
 
-export function getPost(slug: string): PostMeta | undefined {
-  return posts.find((p) => p.slug === slug);
-}
-
 export const publishedPosts = posts.filter((p) => !p.draft);
+
+export function getPost(slug: string): PostMeta | undefined {
+  return publishedPosts.find((p) => p.slug === slug);
+}

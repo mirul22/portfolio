@@ -1,14 +1,17 @@
 import Link from 'next/link';
 
+import { publishedPosts } from '@/content/writing/posts';
 import { siteConfig } from '@/lib/site';
 
 import { Github, Linkedin, Mail, Rss } from './icons';
 import { Container } from './ui';
 
+const hasWriting = publishedPosts.length > 0;
+
 const footerLinks = [
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
-  { href: '/writing', label: 'Writing' },
+  ...(hasWriting ? [{ href: '/writing', label: 'Writing' }] : []),
   { href: '/contact', label: 'Contact' },
   { href: '/resume', label: 'Resume' },
 ];
@@ -20,9 +23,7 @@ export function SiteFooter() {
       <Container className="flex flex-col gap-8 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="font-semibold">{siteConfig.name}</p>
-          <p className="mt-1 text-sm text-muted">
-            Software engineer · Technical Co-Founder of Certava · {siteConfig.country}
-          </p>
+          <p className="mt-1 text-sm text-muted">Software engineer in {siteConfig.country}. Co-founder of Certava.</p>
         </div>
         <nav aria-label="Footer">
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
@@ -71,15 +72,17 @@ export function SiteFooter() {
               </a>
             </li>
           )}
-          <li>
-            <a
-              href="/writing/rss.xml"
-              className="inline-flex size-11 items-center justify-center rounded-full text-muted hover:bg-surface-2 hover:text-fg"
-            >
-              <Rss className="size-5" />
-              <span className="sr-only">RSS feed</span>
-            </a>
-          </li>
+          {hasWriting && (
+            <li>
+              <a
+                href="/writing/rss.xml"
+                className="inline-flex size-11 items-center justify-center rounded-full text-muted hover:bg-surface-2 hover:text-fg"
+              >
+                <Rss className="size-5" />
+                <span className="sr-only">RSS feed</span>
+              </a>
+            </li>
+          )}
         </ul>
       </Container>
       <Container className="pb-10 text-xs text-muted">

@@ -1,12 +1,12 @@
-import { getPost, posts } from '@/content/writing/posts';
+import { getPost, publishedPosts } from '@/content/writing/posts';
 import { ogContentType, ogSize, renderOg } from '@/lib/og';
 
-export const alt = 'Amirul Ikmal — writing';
+export const alt = 'Post by Amirul Ikmal';
 export const size = ogSize;
 export const contentType = ogContentType;
 
 export function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
+  return publishedPosts.map((p) => ({ slug: p.slug }));
 }
 
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
