@@ -22,7 +22,8 @@ export const metadata: Metadata = {
 // Only numbers that can be traced to lib/portfolioData.ts and lib/work.ts.
 const proof = [
   { value: '3', label: 'Products live', detail: 'Certava, Kirabaki and KatalogKu' },
-  { value: '70+', label: 'Features shipped at Vorto', detail: 'On a real-time logistics platform' },
+  // github.com/Amirul-Vorto contribution graph incl. private: 686 (2024, from ~June) + 1,050 (2025) + 423 (2026 to Nov) = 2,159.
+  { value: '2,100+', label: 'Code contributions at Vorto since 2024', detail: 'From my work GitHub account' },
   { value: '2017', label: 'Writing software since', detail: 'First job: the VIBES system for JHEV' },
 ];
 

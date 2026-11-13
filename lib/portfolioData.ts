@@ -53,7 +53,7 @@ export const about = {
   currentlyExploring: 'AI agents, RAG and evaluation pipelines.',
   bio: [
     'I am a software engineer in Malaysia. I started in 2017 as a system programmer on the VIBES system for JHEV, and I have written production software every year since.',
-    'Today I am Technical Co-Founder of Certava, an ISO compliance platform, and a software engineer at Vorto, where I have shipped more than 70 features on a real-time logistics platform and work on AI workflow automation and LAM (Language-Action Models).',
+    'Today I am Technical Co-Founder of Certava, an ISO compliance platform, and a software engineer at Vorto, where I have made more than 2,100 code contributions since 2024 on a real-time logistics platform and work on AI workflow automation and LAM (Language-Action Models).',
     'Outside of that I build two products for small sellers in Malaysia who already do business on WhatsApp. Kirabaki is a bot that records sales in Malay. KatalogKu is a free product catalog that sends orders to WhatsApp.',
     'Most of my work is in Go, TypeScript and PHP. I spend a lot of time on backend services, and I care about reliability and getting the data right.',
   ],
@@ -117,7 +117,7 @@ export const experience: ExperienceItem[] = [
     date: 'Jun 2024 – Present',
     type: 'Full-time',
     bullets: [
-      'Shipped 70+ production features on a real-time logistics SaaS platform.',
+      'Made 2,100+ code contributions since 2024 on a real-time logistics SaaS platform.',
       'Designed backend microservices to make the system more resilient and keep data consistent.',
       'Work on AI workflow automation and LAM.',
       'Work with other teams on continuous deployment.',
