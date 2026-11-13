@@ -16,7 +16,7 @@ export const metadata = pageMetadata({
 
 export default function ResumePage() {
   return (
-    <Container className="max-w-3xl py-12 sm:py-16 print:max-w-none print:px-0 print:py-0">
+    <Container className="resume-sheet max-w-3xl py-12 sm:py-16 print:max-w-none print:px-0 print:py-0">
       <div className="mb-10 flex flex-col gap-4 rounded-2xl border border-border bg-surface p-5 sm:flex-row sm:items-center sm:justify-between print:hidden">
         <p className="text-sm text-muted">The same resume as an A4 PDF.</p>
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -35,9 +35,11 @@ export default function ResumePage() {
 
       <header className="border-b border-border pb-6">
         <h1 className="text-4xl font-semibold tracking-tight">{siteConfig.name}</h1>
-        <p className="mt-1 text-sm text-muted">{siteConfig.legalName}</p>
-        <p className="mt-3 text-lg">Software engineer building LLM products. Technical Co-Founder of Certava.</p>
-        <p className="mt-2 text-sm text-muted">
+        <p className="resume-legal mt-1 text-sm text-muted">{siteConfig.legalName}</p>
+        <p className="resume-title mt-3 text-lg">
+          Software engineer building LLM products. Technical Co-Founder of Certava.
+        </p>
+        <p className="resume-contact mt-2 text-sm text-muted">
           {about.location} · {about.availability} ·{' '}
           <a href={`mailto:${siteConfig.email}`} className="underline-offset-4 hover:underline">
             {siteConfig.email}
@@ -46,6 +48,14 @@ export default function ResumePage() {
           <a href={siteConfig.url} className="underline-offset-4 hover:underline">
             {siteConfig.url.replace(/^https?:\/\//, '')}
           </a>
+          <span className="resume-profiles hidden">
+            {siteConfig.socials.map((social, index) => (
+              <span key={social.href}>
+                {index > 0 ? ' · ' : null}
+                <a href={social.href}>{social.href.replace(/^https?:\/\/(?:www\.)?/, '').replace(/\/$/, '')}</a>
+              </span>
+            ))}
+          </span>
         </p>
       </header>
 
@@ -53,7 +63,7 @@ export default function ResumePage() {
         <h2 id="r-summary" className="text-sm font-semibold tracking-widest text-accent uppercase">
           Summary
         </h2>
-        <p className="mt-3 text-muted">{about.bio[0]}</p>
+        <p className="resume-summary mt-3 text-muted">{about.bio[0]}</p>
       </section>
 
       <section aria-labelledby="r-skills" className="border-t border-border py-6">
@@ -62,7 +72,7 @@ export default function ResumePage() {
         </h2>
         <dl className="mt-3 space-y-2 text-sm">
           {skillGroups.map((g) => (
-            <div key={g.title}>
+            <div key={g.title} className="resume-skill">
               <dt className="font-medium">{g.title}</dt>
               <dd className="text-muted">{g.items.join('; ')}</dd>
             </div>
@@ -76,7 +86,7 @@ export default function ResumePage() {
         </h2>
         <ul className="mt-3 space-y-3">
           {caseStudies.map((c) => (
-            <li key={c.slug}>
+            <li key={c.slug} className="resume-entry">
               <p className="font-medium">
                 {c.name}: {c.tagline}{' '}
                 <span className="text-sm font-normal text-muted">
@@ -96,13 +106,13 @@ export default function ResumePage() {
         </h2>
         <ul className="mt-3 space-y-5">
           {experience.map((e) => (
-            <li key={`${e.company}-${e.date}`} className="break-inside-avoid">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:gap-4">
+            <li key={`${e.company}-${e.date}`} className="resume-entry break-inside-avoid">
+              <div className="resume-role flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                 <p className="font-medium">
                   {e.title}, {e.company}
-                  {e.type ? ` (${e.type})` : ''}
+                  {e.type ? <span className="whitespace-nowrap"> ({e.type})</span> : ''}
                 </p>
-                <p className="shrink-0 font-mono text-sm text-muted">{e.date}</p>
+                <p className="resume-date shrink-0 font-mono text-sm text-muted">{e.date}</p>
               </div>
               {e.bullets && (
                 <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-muted">
@@ -123,7 +133,7 @@ export default function ResumePage() {
         <p className="mt-3 text-sm text-muted">Shipped with previous employers before Vorto.</p>
         <ul className="mt-3 space-y-3">
           {clientWork.map((c) => (
-            <li key={c.id} className="break-inside-avoid text-sm">
+            <li key={c.id} className="resume-entry break-inside-avoid text-sm">
               <p className="font-medium">
                 {c.name}
                 <span className="font-normal text-muted"> ({clientStack(c).join(', ')})</span>
@@ -140,7 +150,7 @@ export default function ResumePage() {
         </h2>
         <ul className="mt-3 space-y-2 text-sm">
           {education.map((e) => (
-            <li key={e.school}>
+            <li key={e.school} className="resume-entry">
               <span className="font-medium">{e.school}</span>, {e.degree} ({e.date}
               {e.grade && `, CGPA ${e.grade}`})
             </li>
@@ -148,7 +158,7 @@ export default function ResumePage() {
         </ul>
         <ul className="mt-3 space-y-1 text-sm text-muted">
           {certifications.map((c) => (
-            <li key={c.title}>
+            <li key={c.title} className="resume-entry">
               {c.title}, {c.issuer}, {c.date}
             </li>
           ))}
