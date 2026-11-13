@@ -107,10 +107,10 @@ export default function ResumePage() {
         <ul className="mt-3 space-y-5">
           {experience.map((e) => (
             <li key={`${e.company}-${e.date}`} className="resume-entry break-inside-avoid">
-              <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4 print:flex-row print:items-baseline print:justify-between">
+              <div className="resume-role flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                 <p className="font-medium">
                   {e.title}, {e.company}
-                  {e.type ? ` (${e.type})` : ''}
+                  {e.type ? <span className="whitespace-nowrap"> ({e.type})</span> : ''}
                 </p>
                 <p className="resume-date shrink-0 font-mono text-sm text-muted">{e.date}</p>
               </div>

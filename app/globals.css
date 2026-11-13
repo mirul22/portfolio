@@ -34,24 +34,36 @@
 
 @page {
   size: A4;
+  /* Applies on every page, including page 2. The margin area stays white because
+     print forces color-scheme: light and a white root background. */
   margin: 18mm;
 }
 
 @media print {
   html {
     font-size: 10.5pt;
+    background: #fff !important;
+    color: #111 !important;
+    color-scheme: light !important;
   }
   html,
   body {
     height: auto !important;
     min-height: 0 !important;
+    margin: 0 !important;
     background: #fff !important;
+    color: #111 !important;
   }
   body {
-    line-height: 1.4;
-    color: #18181b;
+    padding: 0 !important;
+    line-height: 1.45;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+  main,
+  .resume-sheet {
+    background: #fff !important;
+    color: #111 !important;
   }
   main {
     flex: none !important;
@@ -123,7 +135,7 @@
     border: 0;
   }
   .resume-sheet h2 {
-    margin: 10pt 0 4pt;
+    margin: 12pt 0 4pt;
     padding-bottom: 2pt;
     border-bottom: 0.6pt solid #e4e4e7;
     font-size: 9pt;
@@ -161,7 +173,7 @@
     color: #3f3f46;
   }
   .resume-sheet .resume-entry {
-    margin-top: 6pt;
+    margin-top: 4pt;
     margin-bottom: 0;
     break-inside: avoid;
     page-break-inside: avoid;
@@ -169,7 +181,19 @@
   .resume-sheet .resume-entry:first-child {
     margin-top: 0;
   }
+  .resume-sheet .resume-role {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16pt;
+  }
+  .resume-sheet .resume-role > :first-child {
+    min-width: 0;
+  }
   .resume-sheet .resume-date {
+    flex: none;
+    margin-left: 12pt;
     font-family: inherit;
     font-size: 9.5pt;
     line-height: 1.3;
@@ -178,10 +202,11 @@
   }
   .resume-sheet .resume-entry ul {
     margin-top: 2pt;
+    padding-left: 14pt;
   }
   .resume-sheet .resume-entry li {
     margin-top: 1.5pt;
-    line-height: 1.38;
+    line-height: 1.5;
   }
   .resume-sheet p,
   .resume-sheet li {

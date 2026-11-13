@@ -1,6 +1,6 @@
 // Renders the live /resume page to an A4 PDF in /public.
-// Margins come from @page in app/globals.css and from Page.printToPDF, so page 2
-// gets the same inset as page 1. Run against a production server:
+// @page margin is 18mm on every page. The script forces a light color scheme so that
+// margin is white, not the site's dark theme. Run against a production server:
 //   npm run build && npm start   (in another terminal)
 //   npm run resume:pdf
 // Env: RESUME_URL (default http://localhost:3000/resume), CHROME_PATH (default: first Chrome found).
@@ -11,8 +11,6 @@ import { resolve } from 'node:path';
 
 const url = process.env.RESUME_URL ?? 'http://localhost:3000/resume';
 const out = resolve('public/amirul-ikmal-resume.pdf');
-// 18mm in inches. Kept in sync with @page in app/globals.css.
-const marginIn = 18 / 25.4;
 
 const candidates = [
   process.env.CHROME_PATH,
@@ -103,7 +101,11 @@ try {
   console.log(`Wrote ${out} (${Math.round(statSync(out).size / 1024)} KB)`);
 } finally {
   chromeProc.kill('SIGKILL');
-  rmSync(userDataDir, { recursive: true, force: true });
+  try {
+    rmSync(userDataDir, { recursive: true, force: true, maxRetries: 3 });
+  } catch {
+    // Chrome can still be releasing the profile directory. The PDF is already written.
+  }
 }
 
 function printPage(wsUrl) {
@@ -141,8 +143,25 @@ function printPage(wsUrl) {
     ws.addEventListener('open', async () => {
       try {
         await send('Page.enable');
+        await send('Emulation.setEmulatedMedia', {
+          media: 'print',
+          features: [{ name: 'prefers-color-scheme', value: 'light' }],
+        });
+        await send('Emulation.setDefaultBackgroundColorOverride', {
+          color: { r: 255, g: 255, b: 255, a: 1 },
+        });
+        // The site defaults to the dark theme. Strip it before printing so the
+        // page canvas is white, including the area outside the text.
         await send('Runtime.evaluate', {
-          expression: 'document.fonts.ready.then(() => true)',
+          expression: `(() => {
+            const root = document.documentElement;
+            root.classList.remove('dark');
+            root.style.colorScheme = 'light';
+            root.style.background = '#fff';
+            document.body.style.background = '#fff';
+            document.body.style.color = '#111';
+            return document.fonts.ready.then(() => true);
+          })()`,
           awaitPromise: true,
         });
         const printed = await send('Page.printToPDF', {
@@ -150,10 +169,10 @@ function printPage(wsUrl) {
           preferCSSPageSize: true,
           paperWidth: 8.27,
           paperHeight: 11.69,
-          marginTop: marginIn,
-          marginBottom: marginIn,
-          marginLeft: marginIn,
-          marginRight: marginIn,
+          marginTop: 0,
+          marginBottom: 0,
+          marginLeft: 0,
+          marginRight: 0,
           displayHeaderFooter: false,
         });
         clearTimeout(timer);
